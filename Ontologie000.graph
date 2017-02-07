@@ -1,0 +1,8 @@
+Noeud	labelNoeud	lien	labelLien	cibleex:Vehicle	Véhicule			
+ex:Aircraft	Aéronef			
+ex:Aircraft	Aéronef	rdfs:subClassOf	étend	ex:Vehicle
+ex:Person	Personne			
+ex:Pilot	Pilote			
+ex:Pilot	Pilote	rdfs:subClassOf	étend	ex:Person
+ex:Moto	Moto			
+ex:Moto	Moto	rdfs:subClassOf	étend	ex:Vehicle

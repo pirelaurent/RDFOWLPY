@@ -4,19 +4,36 @@ import openpyxl
 import codecs
 import sys
 import datetime
+import rdflib
+from rdflib import Graph
+from rdflib.namespace import Namespace, NamespaceManager
 
 sourceExcelFile = ".\Ontologie000.xlsx"
-destTurtleFile = ".\OntologieTurtle.ttl"
+point = sourceExcelFile.rindex('.')
+root = sourceExcelFile [:point]
+destTurtleFile = root + ".ttl"
+destCytoFile = root + ".graph"
+
+class cytoGenere:
+    def __init__(self, fileCyto):
+        self.fCyto = fileCyto
+        fCyto.write("Noeud\tlabelNoeud\tlien\tlabelLien\tcible\n")
+
+    def genGraphRow(self,name,label,lien,labelLien,cible ):
+        fCyto.write("%s\t%s\t%s\t%s\t%s\n" % (name,label,lien,labelLien,cible))
 
 
 class anExcel:
 
-    def __init__(self, workBook, fileTTL):
+    def __init__(self, workBook, fileTTL, fCyto):
         self.wb=workBook
         self.fOwl = fileTTL
+        self.fCyto=fCyto
+        self.myCyto = cytoGenere(self.fCyto)
+
         self.sheets=[x.upper() for x in wb.get_sheet_names()]
 
-    def coord(self,row, col):
+    def coord(self, row, col):
         # deprecated workbook.sheet.cell(row,col): use coord : gives 'A1' for (0,0) etc.
         ascii_uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         offset = divmod(col,26)
@@ -69,25 +86,33 @@ class anExcel:
             for row in range(1,65000) :
                 entity = sheet[self.coord(row, 0)].value
                 if entity is not None:
-                    nblignesvierges = 0
+                    nblignesvierges = 0         # on arrete après 3 lignes excel vierges
+                    labelforgraph = None
                     genClass = '\n%s \ta \towl:Class.\n'
                     fOwl.write(genClass % entity )
                     prefLabelfr = sheet[self.coord(row, 1)].value
                     if prefLabelfr is not None :
                         genLabelfr = '%s \tskos:prefLabel \t"%s"@fr .\n'
                         fOwl.write(genLabelfr % (entity,prefLabelfr))
+                        labelforgraph = prefLabelfr
                     prefLabelen = sheet[self.coord(row, 2)].value
                     if prefLabelen is not None :
                         genLabelen = '%s \tskos:prefLabel \t"%s"@en .\n'
                         fOwl.write(genLabelen % (entity,prefLabelen))
+                        if labelforgraph is None :
+                            labelforgraph = prefLabelen
                     comment = sheet[self.coord(row,3)].value
                     if comment is not None :
                         genComment = '%s \trdfs:comment \t"%s" .\n'
                         fOwl.write(genComment % (entity, comment))
+                    # genère le noeud graphique sans lien owl:class
+                    self.myCyto.genGraphRow(entity, labelforgraph,"","","")
+
                     subClassOf = sheet[self.coord(row,4)].value
                     if subClassOf is not None :
                         genSubClass = '%s \trdfs:subClassOf \t %s .\n'
                         fOwl.write(genSubClass % (entity, subClassOf))
+                        self.myCyto.genGraphRow(entity, labelforgraph,"rdfs:subClassOf","étend",subClassOf)
                 else :
                     nblignesvierges += 1
                 if nblignesvierges >3:
@@ -141,7 +166,7 @@ class anExcel:
                         rdfs:subClassOf
                           [ a owl:Restriction;
                             owl:onProperty my:hasMovie ;
-                            owl:minCardinality "1"^^xsd:nonNegativeInteger .
+                            owl:minCardinality "1"^^xsd:nonNegativeInteger
                           ] ."""
                     if hasRestriction :
                         genRestric = ('\n%s \t rdfs:subClassOf\n \t[ \ta owl:Restriction ;\n \t \t owl:onProperty %s ;\n')
@@ -153,7 +178,7 @@ class anExcel:
                             if minProperty is not None:  # il faut conclure la précédente
                                 fOwl.write(' ;\n')
                             fOwl.write(' \t \towl:maxCardinality \t"%s"^^xsd:noneNegativeInteger' % maxProperty)
-                        fOwl.write(' .\n')
+                        fOwl.write(' \n')
                         fOwl.write('\t] . \n')
                     # une propriété à une seule valeur est qualifiée de FunctionalPropery
                         if maxProperty is not None :
@@ -172,24 +197,45 @@ class anExcel:
 
 
 
-
-
 # MAIN PROG
 #------------- pour pouvoir mettre de l'accentué
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-with codecs.open(destTurtleFile,'w',encoding='utf8') as fOwl:
+if True :   # pour pouvoir sauter en test
+    fOwl = codecs.open(destTurtleFile,'w', encoding = 'utf8')
+    fCyto = codecs.open(destCytoFile,'w', encoding = 'utf8')
     now = datetime.datetime.now()
     fOwl.write('# generation depuis Excel:'+sourceExcelFile+ ' le '+now.strftime("%Y-%m-%d %H:%M")+"\n\n")
     # open excel and get sheets name
     wb = openpyxl.load_workbook(sourceExcelFile)
     # create object excelTreatment
-    excel = anExcel(wb, fOwl)
+    excel = anExcel(wb, fOwl, fCyto)
     excel.createPrefix()
     excel.createOntology()
     excel.createEntities()
     excel.createObjectProperties()
-    fOwl.close
+    fOwl.close()
+    fCyto.close()
+
+
+
+
+if  True :  # pour pouvoir sauter en test
+    # at this time a rdf/owl file exists. Open in DB
+
+    g=rdflib.Graph()
+    g.parse(destTurtleFile, format='turtle')
+    for aspace in NamespaceManager(g).namespaces():
+        #print aspace
+        pass
+
+    for s,p,o in g:
+        print s,p,o
+
+    # semble long et ne ramène pas le @fr  FILTER (langMatches(lang(?job),'ES'))
+    gres = g.query('SELECT * WHERE { ?p a owl:Class ; skos:prefLabel ?lab. FILTER (langMatches(lang(?lab),"FR")) }')
+    for row in gres:
+        print("%s is aClass label %s" % row )
 
 
