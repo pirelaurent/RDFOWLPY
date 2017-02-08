@@ -17,10 +17,10 @@ destCytoFile = root + ".graph"
 class cytoGenere:
     def __init__(self, fileCyto):
         self.fCyto = fileCyto
-        fCyto.write("Noeud\tlabelNoeud\tlien\tlabelLien\tcible\n")
+        fCyto.write("noeud\tlabelNoeud\ttypelien\tlien\tlabelLien\tdestination\n")
 
-    def genGraphRow(self,name,label,lien,labelLien,cible ):
-        fCyto.write("%s\t%s\t%s\t%s\t%s\n" % (name,label,lien,labelLien,cible))
+    def genGraphRow(self,name,label,typeLien,lien,labelLien,destination ):
+        fCyto.write("%s\t%s\t%s\t%s\t%s\t%s\n" % (name,label,typeLien,lien,labelLien,destination))
 
 
 class anExcel:
@@ -106,13 +106,13 @@ class anExcel:
                         genComment = '%s \trdfs:comment \t"%s" .\n'
                         fOwl.write(genComment % (entity, comment))
                     # genère le noeud graphique sans lien owl:class
-                    self.myCyto.genGraphRow(entity, labelforgraph,"","","")
+                    self.myCyto.genGraphRow(entity, labelforgraph,"","","","")
 
                     subClassOf = sheet[self.coord(row,4)].value
                     if subClassOf is not None :
                         genSubClass = '%s \trdfs:subClassOf \t %s .\n'
                         fOwl.write(genSubClass % (entity, subClassOf))
-                        self.myCyto.genGraphRow(entity, labelforgraph,"rdfs:subClassOf","étend",subClassOf)
+                        self.myCyto.genGraphRow(entity, labelforgraph,"subClassOf","rdfs:subClassOf","sorte de",subClassOf)
                 else :
                     nblignesvierges += 1
                 if nblignesvierges >3:
@@ -130,14 +130,24 @@ class anExcel:
                     nblignesvierges = 0
                     genProperty = '\n%s \ta \towl:ObjectProperty.\n'
                     fOwl.write(genProperty % property )
+                    # Labels
+                    labelforgraph = None
+
                     prefLabelfr = sheet[self.coord(row, 1)].value
                     if prefLabelfr is not None :
                         genLabelfr = '%s \tskos:prefLabel \t"%s"@fr .\n'
                         fOwl.write(genLabelfr % (property,prefLabelfr))
+                        labelforgraph = prefLabelfr
+
                     prefLabelen = sheet[self.coord(row, 2)].value
                     if prefLabelen is not None :
                         genLabelen = '%s \tskos:prefLabel \t"%s"@en .\n'
                         fOwl.write(genLabelen % (property,prefLabelen))
+                        if labelforgraph is None :
+                            labelforgraph = prefLabelen
+                    if labelforgraph is None :
+                        labelforgraph = property
+                    # domain
                     domain = sheet[self.coord(row,3)].value
                     if domain is not None :
                         genDomain = '%s \tskos:prefLabel \t"%s"@en .\n'
@@ -152,6 +162,7 @@ class anExcel:
                     if comment is not None :
                         genComment = '%s \trdfs:comment \t"%s" .\n'
                         fOwl.write(genComment % (property, comment))
+
                     minProperty = sheet[self.coord(row,6)].value
                     if minProperty is not None:
                         if minProperty == 0 :
@@ -184,11 +195,18 @@ class anExcel:
                         if maxProperty is not None :
                             if maxProperty == 1 :
                                 fOwl.write( '%s\t a \towl:FunctionalProperty .\n' % property)
-
-
-
-
-
+                    # on complète le label par la cardinalité explicite si différente de *
+                        cardGraph=""
+                        if minProperty is not None :
+                            cardGraph = str(minProperty)
+                        if maxProperty is not None :
+                            if cardGraph == "":
+                                cardGraph = "0"
+                            cardGraph = cardGraph +":"+str(maxProperty)
+                        if cardGraph != "":
+                            cardGraph="("+cardGraph+")"
+                        labelforgraph += cardGraph
+                    self.myCyto.genGraphRow(domain,"","ObjectProperty",property,labelforgraph,whatrange)
                 else :
                     nblignesvierges += 1
                 if nblignesvierges >3 :
@@ -221,7 +239,7 @@ if True :   # pour pouvoir sauter en test
 
 
 
-if  True :  # pour pouvoir sauter en test
+if  False :  # pour des essais
     # at this time a rdf/owl file exists. Open in DB
 
     g=rdflib.Graph()
@@ -239,3 +257,20 @@ if  True :  # pour pouvoir sauter en test
         print("%s is aClass label %s" % row )
 
 
+""" @TODO
+    générer les DatatypeProperties
+        tenir un dictionnaire pour les string, integer, date,etc. du XML
+        mettre comme libellé S, I, D etc.
+        changer l'identifiant cible à chaque fois : S1, S2, etc. de manière à ne pas relier tout au mëme
+
+    ajouter une colonne genreLien pour mettre des symboles différents pour :
+     subClassOf
+     ObjectProperty
+     DatatypeProperty
+
+
+
+
+
+
+"""

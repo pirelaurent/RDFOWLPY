@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad32b2c1-fb6a-456d-b165-9d7f323aa257" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ontologie000.xlsx" afterPath="$PROJECT_DIR$/Ontologie000.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OntologieTurtle.ttl" afterPath="$PROJECT_DIR$/OntologieTurtle.ttl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ontologie000.graph" afterPath="$PROJECT_DIR$/Ontologie000.graph" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ontologie000.ttl" afterPath="$PROJECT_DIR$/Ontologie000.ttl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReadExcelRdfOwl.py" afterPath="$PROJECT_DIR$/ReadExcelRdfOwl.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ontologieStyle0.xml" afterPath="$PROJECT_DIR$/ontologieStyle0.xml" />
     </list>
     <ignored path="RDFOWLPY.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +31,8 @@
       <file leaf-file-name="ReadExcelRdfOwl.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ReadExcelRdfOwl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+            <state relative-caret-position="462">
+              <caret line="31" column="44" lean-forward="true" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
               <folding>
                 <element signature="e#25#40#0" expanded="true" />
               </folding>
@@ -39,6 +41,11 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>genGraphRow</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -346,8 +353,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ReadExcelRdfOwl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#25#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReadExcelRdfOwl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="31" column="44" lean-forward="true" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
           <folding>
             <element signature="e#25#40#0" expanded="true" />
           </folding>
