@@ -1,0 +1,47 @@
+@prefix ex: <http://myProject/1.0/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+_:node1b8fbrluax1 a owl:Restriction ;
+	owl:maxCardinality "1"^^xsd:noneNegativeInteger ;
+	owl:onProperty ex:conduit .
+
+ex:Aircraft a owl:Class ;
+	rdfs:comment "Tout objet volant " ;
+	rdfs:subClassOf ex:Vehicle ;
+	skos:prefLabel "Aircraft"@en , "Aéronef"@fr .
+
+ex:Moto a owl:Class ;
+	rdfs:subClassOf ex:Vehicle ;
+	skos:prefLabel "Motocycle"@fr .
+
+ex:Person a owl:Class ;
+	rdfs:comment "a human being" ;
+	skos:prefLabel "Person"@en , "Personne"@fr .
+
+ex:Pilot a owl:Class ;
+	rdfs:comment "Personne ayant capacité à conduire un véhicule" ;
+	rdfs:subClassOf _:node1b8fbrluax1 , ex:Person ;
+	skos:prefLabel "Pilot"@en , "Pilote"@fr .
+
+ex:Vehicle a owl:Class ;
+	rdfs:comment "Tout objet capable de se déplacer" ;
+	skos:prefLabel "Vehicle"@en , "Véhicule"@fr .
+
+ex:conduire a owl:ObjectProperty ;
+	rdfs:comment "capacité à  diriger un véhicule" ;
+	skos:prefLabel "drive"@en , "ex:Pilot"@en , "ex:Vehicle"@en , "conduire"@fr .
+
+ex:conduit a owl:FunctionalProperty , owl:ObjectProperty ;
+	rdfs:comment "Actuellement en train de conduire " ;
+	skos:prefLabel "ex:Pilot"@en , "ex:Vehicle"@en , "is driven"@en , "conduit"@fr .
+
+ex:monOntologie dc:contributor "pierre, paul, jacques" ;
+	dc:description "Une ontologie exemple" ;
+	dc:title "mon ontologie de départ" ;
+	a owl:Ontology .

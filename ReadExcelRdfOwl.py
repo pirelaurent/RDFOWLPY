@@ -1,11 +1,17 @@
 # -*- coding: utf-8 -*-
+"""
+read an excel file as Ontologie000.xsl
+crée un fichier TTL
+Crée un fichier excel pour relacture par Cytoscape
 
+
+"""
 import openpyxl
 import codecs
 import sys
 import datetime
 import rdflib
-from rdflib import Graph
+
 from rdflib.namespace import Namespace, NamespaceManager
 
 sourceExcelFile = ".\Ontologie000.xlsx"

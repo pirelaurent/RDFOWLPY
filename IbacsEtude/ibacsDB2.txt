@@ -1,0 +1,203 @@
+typeNoeud	Db	\lien	domain	typeDestDB	 Configuration	 workWith 	Configuration 	domain 
+ DB	 DocIpc	 workWith 	Impacts 	domain 
+ DB	 DocIpc	 workWith 	Explanations 	domain 
+ DB	 DocIpc	 workWith 	Doc 	domain 
+ DB	 DocIpc	 workWith 	Ipc 	domain 
+ DB	 Ft	 workWith 	Impacts 	domain 
+ DB	 Ft	 workWith 	Ftr 	domain 
+ DB	 Gse	 workWith 	Impacts 	domain 
+ DB	 Gse	 workWith 	Explanations 	domain 
+ DB	 Gse	 workWith 	Gse 	domain 
+ DB	 Hums	 workWith 	Impacts 	domain 
+ DB	 Hums	 workWith 	Explanations 	domain 
+ DB	 Hums	 workWith 	Hums 	domain 
+ DB	 Lsa	 workWith 	Impacts 	domain 
+ DB	 Lsa	 workWith 	Explanations 	domain 
+ DB	 Lsa	 workWith 	Lsa-Operations 	domain 
+ DB	 Management	 workWith 	Impacts 	domain 
+ DB	 Management	 workWith 	Explanations 	domain 
+ DB	 Management	 workWith 	Management 	domain 
+ DB	 Mms	 workWith 	Impacts 	domain 
+ DB	 Mms	 workWith 	Maintenance-Management-Systems 	domain 
+ DB	 Pmi	 workWith 	Impacts 	domain 
+ DB	 Pmi	 workWith 	Explanations 	domain 
+ DB	 Pmi	 workWith 	Progressive-Maintenance-Inspections 	domain 
+ DB	 Resource	 workWith 	Impacts 	domain 
+ DB	 Resource	 workWith 	Explanations 	domain 
+ DB	 Resource	 workWith 	Traceability 	domain 
+ DB	 Resource	 workWith 	Business-Refs 	domain 
+ DB	 Resource	 workWith 	Resources 	domain 
+ DB	 Resource	 workWith 	Indicators 	domain 
+ DB	 Resource	 workWith 	Lsa-Resources 	domain 
+ DB	 Resource	 workWith 	Patchs 	domain 
+ DB	 Rmp	 workWith 	Impacts 	domain 
+ DB	 Rmp	 workWith 	Explanations 	domain 
+ DB	 Rmp	 workWith 	Maintenance-Plans 	domain 
+ DB	 Sew	 workWith 	Impacts 	domain 
+ DB	 Sew	 workWith 	Explanations 	domain 
+ DB	 Sew	 workWith 	Sew 	domain 
+ DB	 Sf	 workWith 	Impacts 	domain 
+ DB	 Sf	 workWith 	Explanations 	domain 
+ DB	 Sf	 workWith 	SymptomFiltering 	domain 
+ DB	 TechnicalRef	 workWith 	Impacts 	domain 
+ DB	 TrblAnalysis	 workWith 	Impacts 	domain 
+ DB	 TrblAnalysis	 workWith 	Explanations 	domain 
+ DB	 TrblAnalysis	 workWith 	Troubleshooting-Analyses 	domain 
+ DB	 TrblAnalysisRef	 workWith 	Impacts 	domain 
+ DB	 TrblAnalysisRef	 workWith 	Explanations 	domain 
+ DB	 TrblAnalysisRef	 workWith 	Troubleshooting-Analyses-Ref 	domain 
+ DB	 TrblResources	 workWith 	Impacts 	domain 
+ DB	 TrblResources	 workWith 	Troubleshooting-Resources 	domain 
+ DB	 Workshop	 workWith 	Workshops 	domain 
+ DB	 Workshop	 workWith 	Impacts 	domain 
+ Domain 	Attributes 
+Domain 	Attributes 	 depends-on 	Commons 	domain 
+Domain 	Business-Refs 
+Domain 	Business-Refs 	 depends-on 	Commons 	domain 
+Domain 	Business-Refs 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Commons 
+Domain 	Configuration 
+Domain 	Configuration 	 depends-on 	Commons 	domain 
+Domain 	Doc 
+Domain 	Doc 	 depends-on 	Business-Refs 	domain 
+Domain 	Doc 	 depends-on 	Commons 	domain 
+Domain 	Doc 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Doc 	 depends-on 	Troubleshooting-Interface 	domain 
+Domain 	Explanations 
+Domain 	Explanations 	 depends-on 	Commons 	domain 
+Domain 	Explanations 	 depends-on 	External-Refs 	domain 
+Domain 	Explanations 	 depends-on 	Management 	domain 
+Domain 	External-Refs 
+Domain 	External-Refs 	 depends-on 	Commons 	domain 
+Domain 	External-Refs 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Ftr 
+Domain 	Ftr 	 depends-on 	Business-Refs 	domain 
+Domain 	Ftr 	 depends-on 	Commons 	domain 
+Domain 	Ftr 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Gse 
+Domain 	Gse 	 depends-on 	Business-Refs 	domain 
+Domain 	Gse 	 depends-on 	Commons 	domain 
+Domain 	Gse 	 depends-on 	External-Refs 	domain 
+Domain 	Gse 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Gse 	 depends-on 	Lsa-Resources-Interface 	domain 
+Domain 	Hums 
+Domain 	Hums 	 depends-on 	Commons 	domain 
+Domain 	Hums 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Hums 	 depends-on 	Troubleshooting-Interface 	domain 
+Domain 	Hums 	 depends-on 	Lsa-Resources 	domain 
+Domain 	Impacts 
+Domain 	Impacts 	 depends-on 	Explanations 	domain 
+Domain 	Impacts 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Impacts-Interface 
+Domain 	Indicators 
+Domain 	Indicators 	 depends-on 	Commons 	domain 
+Domain 	Indicators 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Indicators 	 depends-on 	Business-Refs 	domain 
+Domain 	Indicators 	 depends-on 	Resources 	domain 
+Domain 	IndicatorsNew 
+Domain 	IndicatorsNew 	 depends-on 	Business-Refs 	domain 
+Domain 	IndicatorsNew 	 depends-on 	Commons 	domain 
+Domain 	IndicatorsNew 	 depends-on 	Impacts-Interface 	domain 
+Domain 	IndicatorsNew 	 depends-on 	Resources 	domain 
+Domain 	Ipc 
+Domain 	Ipc 	 depends-on 	Business-Refs 	domain 
+Domain 	Ipc 	 depends-on 	Commons 	domain 
+Domain 	Ipc 	 depends-on 	Doc 	domain 
+Domain 	Ipc 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Lsa-Operations 
+Domain 	Lsa-Operations 	 depends-on 	Commons 	domain 
+Domain 	Lsa-Operations 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Lsa-Operations 	 depends-on 	Business-Refs 	domain 
+Domain 	Lsa-Operations 	 depends-on 	External-Refs 	domain 
+Domain 	Lsa-Operations 	 depends-on 	Lsa-Resources 	domain 
+Domain 	Lsa-Operations 	 depends-on 	Lsa-Resources-Interface 	domain 
+Domain 	Lsa-Operations 	 depends-on 	Resources 	domain 
+Domain 	Lsa-Operations 	 depends-on 	Management 	domain 
+Domain 	Lsa-Operations 	 depends-on 	Explanations 	domain 
+Domain 	Lsa-Operations 	 depends-on 	Workshops-Interface 	domain 
+Domain 	Lsa-Resources 
+Domain 	Lsa-Resources 	 depends-on 	Business-Refs 	domain 
+Domain 	Lsa-Resources 	 depends-on 	Commons 	domain 
+Domain 	Lsa-Resources 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Lsa-Resources 	 depends-on 	Lsa-Resources-Interface 	domain 
+Domain 	Lsa-Resources 	 depends-on 	Resources 	domain 
+Domain 	Lsa-Resources 	 depends-on 	Troubleshooting-Interface 	domain 
+Domain 	Lsa-Resources-Interface 
+Domain 	Maintenance-Management-Systems 
+Domain 	Maintenance-Management-Systems 	 depends-on 	Commons 	domain 
+Domain 	Maintenance-Management-Systems 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Maintenance-Management-Systems 	 depends-on 	Lsa-Operations 	domain 
+Domain 	Maintenance-Management-Systems 	 depends-on 	Maintenance-Plans 	domain 
+Domain 	Maintenance-Management-Systems 	 depends-on 	Resources 	domain 
+Domain 	Maintenance-Plans 
+Domain 	Maintenance-Plans 	 depends-on 	Business-Refs 	domain 
+Domain 	Maintenance-Plans 	 depends-on 	Commons 	domain 
+Domain 	Maintenance-Plans 	 depends-on 	Doc 	domain 
+Domain 	Maintenance-Plans 	 depends-on 	Explanations 	domain 
+Domain 	Maintenance-Plans 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Maintenance-Plans 	 depends-on 	Lsa-Resources 	domain 
+Domain 	Maintenance-Plans 	 depends-on 	Lsa-Operations 	domain 
+Domain 	Maintenance-Plans 	 depends-on 	Resources 	domain 
+Domain 	Maintenance-Plans 	 depends-on 	Workshops-Interface 	domain 
+Domain 	Management 
+Domain 	Management 	 depends-on 	Attributes 	domain 
+Domain 	Management 	 depends-on 	Commons 	domain 
+Domain 	Management 	 depends-on 	External-Refs 	domain 
+Domain 	Management 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Patchs 
+Domain 	Patchs 	 depends-on 	Commons 	domain 
+Domain 	Patchs 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Patchs 	 depends-on 	Business-Refs 	domain 
+Domain 	Patchs 	 depends-on 	Resources 	domain 
+Domain 	Progressive-Maintenance-Inspections 
+Domain 	Progressive-Maintenance-Inspections 	 depends-on 	Commons 	domain 
+Domain 	Progressive-Maintenance-Inspections 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Progressive-Maintenance-Inspections 	 depends-on 	Business-Refs 	domain 
+Domain 	Progressive-Maintenance-Inspections 	 depends-on 	Resources 	domain 
+Domain 	Progressive-Maintenance-Inspections 	 depends-on 	Lsa-Resources 	domain 
+Domain 	Progressive-Maintenance-Inspections 	 depends-on 	Lsa-Operations 	domain 
+Domain 	Progressive-Maintenance-Inspections 	 depends-on 	Maintenance-Plans 	domain 
+Domain 	Resources 
+Domain 	Resources 	 depends-on 	Commons 	domain 
+Domain 	Resources 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Resources 	 depends-on 	Business-Refs 	domain 
+Domain 	Resources 	 depends-on 	Doc 	domain 
+Domain 	Resources 	 depends-on 	Ipc 	domain 
+Domain 	Resources 	 depends-on 	Ftr 	domain 
+Domain 	Resources 	 depends-on 	Lsa-Resources-Interface 	domain 
+Domain 	Security 
+Domain 	Sew 
+Domain 	Sew 	 depends-on 	Configuration 	domain 
+Domain 	SymptomFiltering 
+Domain 	SymptomFiltering 	 depends-on 	Commons 	domain 
+Domain 	SymptomFiltering 	 depends-on 	Impacts-Interface 	domain 
+Domain 	SymptomFiltering 	 depends-on 	Hums 	domain 
+Domain 	SymptomFiltering 	 depends-on 	Troubleshooting-Interface 	domain 
+Domain 	Traceability 
+Domain 	Traceability 	 depends-on 	Doc 	domain 
+Domain 	Traceability 	 depends-on 	Ipc 	domain 
+Domain 	Traceability 	 depends-on 	Lsa-Resources 	domain 
+Domain 	Troubleshooting-Analyses 
+Domain 	Troubleshooting-Analyses 	 depends-on 	Commons 	domain 
+Domain 	Troubleshooting-Analyses 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Troubleshooting-Analyses 	 depends-on 	Business-Refs 	domain 
+Domain 	Troubleshooting-Analyses 	 depends-on 	Resources 	domain 
+Domain 	Troubleshooting-Analyses 	 depends-on 	Troubleshooting-Interface 	domain 
+Domain 	Troubleshooting-Analyses 	 depends-on 	Troubleshooting-Resources 	domain 
+Domain 	Troubleshooting-Analyses 	 depends-on 	Troubleshooting-Analyses-Ref 	domain 
+Domain 	Troubleshooting-Analyses-Ref 
+Domain 	Troubleshooting-Analyses-Ref 	 depends-on 	Commons 	domain 
+Domain 	Troubleshooting-Analyses-Ref 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Troubleshooting-Interface 
+Domain 	Troubleshooting-Resources 
+Domain 	Troubleshooting-Resources 	 depends-on 	Commons 	domain 
+Domain 	Troubleshooting-Resources 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Troubleshooting-Resources 	 depends-on 	Business-Refs 	domain 
+Domain 	Workshops 
+Domain 	Workshops 	 depends-on 	Commons 	domain 
+Domain 	Workshops 	 depends-on 	Impacts-Interface 	domain 
+Domain 	Workshops 	 depends-on 	Business-Refs 	domain 
+Domain 	Workshops 	 depends-on 	Resources 	domain 
+Domain 	Workshops 	 depends-on 	Lsa-Operations 	domain 
+Domain 	Workshops 	 depends-on 	Workshops-Interface 	domain 
+Domain 	Workshops-Interface 

@@ -1,0 +1,2490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../ild-modelling-tools/data/basic.xsd">
+   <package name="da.ibacs.business.ids" converters="da.ibacs.business.converters.generated" informers="da.ibacs.support.informers">
+
+      <string-id name="AtaChapterSet">
+         <description lang="fr">Il s'agit d'une concaténation de chapitres ATA.</description>
+         <sample>28</sample>
+         <sample>28 63</sample>
+         <generate code="NONE" converters="true" informer="NONE"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <string-id name="AtaId">
+         <sample>000000242</sample>
+         <generate code="FULL" converters="true" informer="NONE"/>
+         <fixed-prefix value="ATA-" optional="true"/>
+         <constraints max-length="9"/>
+      </string-id>
+
+      <string-id name="AttributeGroupId">
+         <sample>AG-Group1</sample>
+         <sample>AG-Group2</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="AG-"/>
+         <constraints max-length="16" min-length="0" pattern="[a-zA-Z][a-zA-Z0-9_]*"/>
+      </string-id>
+
+      <string-id name="AttributeId">
+         <sample>ATTR-Attribute1</sample>
+         <sample>ATTR-Attribute2</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="ATTR-"/>
+         <constraints max-length="16" min-length="0" pattern="[a-zA-Z][a-zA-Z0-9_]*"/>
+      </string-id>
+
+      <string-id name="BitFalbalaId">
+         <description lang="fr">Identifiant d'un Bit de Panne</description>
+         <sample>BF-10000</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="BF-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <integer-id name="BreakdownGroupId">
+         <sample>123456</sample>
+         <sample>BDG-123456</sample>
+         <sample>BDG-122226</sample>
+         <sample>BDG-123678</sample>
+         <sample>BDG-780000</sample>
+         <!-- generate code="NONE" converters="true" informer="EDITABLE"/> -->
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="BDG-" optional="true"/>
+         <constraints digits="6" max-value="999999"/>
+      </integer-id>
+
+      <integer-id name="BusinessId">
+         <description lang="fr">Identifiant d'une affaire</description>
+         <sample>123</sample>
+         <sample>BUS-123</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="BUS-" optional="true"/>
+         <constraints digits="3" max-value="999"/>
+      </integer-id>
+
+      <string-id name="CasId">
+         <description lang="fr">Identifiant d'une alarme (CAS)</description>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="CAS-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+
+      <string-id name="CfgAliasId">
+         <sample>NAMEXPR-RAFALE_VISION_HAUTE_OU_MOENNE</sample>
+         <sample>NAMEXPR-RAFALE_RADAR_ALPHA_TEST1ET_BETA2</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="ALIAS-" optional="true"/>
+         <constraints max-length="70"/>
+      </string-id>
+
+      <integer-id name="CfgAssertionId">
+         <sample>ASS-000286498</sample>
+         <sample>000286498</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="ASS-" optional="true"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <string-id name="CfgEnumeratedTypeId" extends="CfgTypeId">
+         <sample>ENU-10</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="ENU-" optional="false"/>
+         <constraints max-length="32" min-length="0"/>
+      </string-id>
+
+      <!-- Old Version ==> On migre vers un id de type String. /> -->
+      <!--
+         <string-id name="CfgEnumerationValueId">
+         <sample>DID</sample>
+
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <constraints digits="2"/>
+         </integer-id>
+      -->
+
+      <string-id name="CfgEnumerationValueId">
+         <sample>RAM</sample>
+         <sample>F1</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <!-- <fixed-prefix value="ENUV-" optional="true"/> -->
+         <constraints max-length="32"/>
+      </string-id>
+
+
+      <string-id name="CfgNaturalTypeId" extends="CfgTypeId">
+         <sample>NAT-10</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="NAT-" optional="false"/>
+         <constraints max-length="32" min-length="0"/>
+      </string-id>
+
+
+      <integer-id name="CfgPolicyId">
+         <sample>POL-000452398</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="POL-"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <string-id name="CfgPropertyId">
+         <sample>Rafale-Version</sample>
+         <sample>M2000-Standard</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <any-prefix separator="-" max-length="16"/>
+         <constraints max-length="32"/>
+      </string-id>
+
+      <integer-id name="CfgRegistryId">
+         <sample>REG-00023425</sample>
+         <sample>REG-00843401</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="REG-"/>
+         <constraints digits="8" max-value="99999999"/>
+      </integer-id>
+
+      <string-id name="CfgTypeId" abstract="true">
+         <generate code="NONE" converters="true" informer="NONE"/>
+         <multi-prefix>
+            <value text="NAT-"/>
+            <value text="ENU-"/>
+         </multi-prefix>
+         <constraints max-length="32" inner-spaces="false" outer-spaces="false"/>
+      </string-id>
+
+      <string-id name="CountryId">
+         <description lang="fr">Identifiant d'un pays suivant la norme ISO 3166-1.</description>
+         <sample>FR</sample>
+         <sample>CNY-FR</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="CNY-" optional="true"/>
+         <constraints max-length="2"/>
+      </string-id>
+
+      <string-id name="CsnChapterPart">
+         <description lang="fr">Six premiers caractères du CsnNumber, il s'agit d'un découpage en chapitre sous-chapitre.
+Peut valoir "      " ou "------" si le Csn n'est pas découpé en chapitre.</description>
+         <sample>------</sample>
+         <sample>      </sample>
+         <sample>012345</sample>
+         <generate code="NONE" converters="true" informer="NONE"/>
+         <constraints max-length="6" min-length="6" inner-spaces="true"/>
+      </string-id>
+
+      <string-id name="CsnFigurePart">
+         <description lang="fr">Sept derniers caractères du CsnNumber, il s'agit du numéro de la figure.
+Le dernier caractère pouvant être un espace, l'algorithme supporte une chaine de 6 caractères et ajoute automatiquement un espace.</description>
+         <sample>01 001 </sample>
+         <sample>01 001</sample>
+         <generate code="NONE" converters="true" informer="NONE"/>
+         <constraints max-length="7" min-length="7" inner-spaces="true" outer-spaces="true"/>
+      </string-id>
+
+      <string-id name="CsnId">
+         <description lang="fr">Identifiant d'un CSN, il s'agit de la concaténation de l'IppId et du CsnNumber.</description>
+         <sample>F6117PPPP01234501A001A</sample>
+         <sample>F6117PPPP01234501A001 </sample>
+         <sample>F6117PPPP01234501A001</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <constraints max-length="22" min-length="22" inner-spaces="true" outer-spaces="true"/>
+      </string-id>
+
+      <string-id name="CsnNumber">
+         <description lang="fr">Numéro de CSN,
+il s'agit de la concaténation d'un découpage en chapitre sous-chapitre (CsnChapterPart optionel) et d'un numéro de figure (CsnFigurePart).</description>
+         <sample>01234501 001 </sample>
+         <sample>01234501 001</sample>
+         <generate code="NONE" converters="true" informer="NONE"/>
+         <constraints max-length="13" min-length="13" inner-spaces="true" outer-spaces="true"/>
+      </string-id>
+
+      <string-id name="DataModuleId" extends="DocModuleId">
+         <sample>DM-DataModule</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="DM-" optional="true"/>
+         <constraints max-length="30" inner-spaces="true"/>
+      </string-id>
+
+      <integer-id name="DataModuleLogisticId">
+         <sample>10</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="DMR-"/>
+         <constraints digits="7" max-value="9999999"/>
+      </integer-id>
+
+      <string-id name="DataModuleResourceId">
+         <sample>MFR-XXXX</sample>
+         <sample>CSN-XXXX</sample>
+         <sample>ISN-XXXX</sample>
+         <sample>STD-XXXX</sample>
+         <generate code="PARTIAL" converters="true" informer="EDITABLE"/>
+         <any-prefix separator="-" max-length="4">
+         </any-prefix>
+         <constraints max-length="42" inner-spaces="true" outer-spaces="true"/>
+      </string-id>
+
+      <string-id name="DocPublicationId">
+         <sample>PUB-Publication</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="PUB-"/>
+         <constraints max-length="20"/>
+      </string-id>
+
+      <string-id name="EnergyId" extends="ResourceId">
+         <sample>NRGY-Energy1</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="NRGY-"/>
+         <constraints max-length="38"/>
+      </string-id>
+
+      <integer-id name="EngineeringZoneId">
+         <sample>12345</sample>
+         <sample>ENG-12345</sample>
+         <generate code="FULL" converters="true" informer="NONE"/>
+         <fixed-prefix value="ENG-" optional="true"/>
+         <constraints digits="5" max-value="99999"/>
+      </integer-id>
+
+      <string-id name="ExplanationId">
+         <description lang="fr">Identifiant d'une explication, il s'agit de la concaténation d'un RawId et d'un numéro incrémental.</description>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="EXP-" optional="true"/>
+         <constraints max-length="124"/>
+      </string-id>
+
+      <integer-id name="ExternalRefId">
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="REF-"/>
+         <constraints digits="6" max-value="32767"/>
+      </integer-id>
+
+      <integer-id name="ExternalRefLocationId">
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="RDL-"/>
+         <constraints/>
+      </integer-id>
+
+      <string-id name="ExternalRefTypeId">
+         <sample>DOC</sample>
+         <sample>FCR</sample>
+         <sample>REM</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="" optional="true"/>
+         <constraints max-length="5"/>
+      </string-id>
+
+      <string-id name="FailureCodeId">
+         <description lang="fr">Identifiant d'un bit de maintenance</description>
+         <sample>FC-10000</sample>
+         <sample>FC-100</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="FC-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <string-id name="FaultRootCauseId">
+         <description lang="fr">Identifiant d'un fault/RootCause</description>
+         <sample>FRC-100</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="FRC-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <string-id name="FlightControlSystemBitId">
+         <description lang="fr">Identifiant d'un bit commande de vol</description>
+         <sample>FCS-10000</sample>
+         <sample>BF-100</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="FCS-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <integer-id name="GseId">
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="GSE-" optional="true"/>
+         <constraints/>
+      </integer-id>
+
+      <integer-id name="GseQuantityId">
+         <generate code="NONE" converters="true" informer="NONE"/>
+         <fixed-prefix value="GQTY-" optional="true"/>
+         <constraints/>
+      </integer-id>
+
+      <string-id name="GseSetId" extends="ResourceId">
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="GSES-" optional="true"/>
+         <constraints max-length="64"/>
+      </string-id>
+
+      <!-- TODO No Prefix -->
+      <string-id name="HumsAmsId">
+         <sample>123</sample>
+         <sample>AMS-123</sample>
+         <!-- Do not generate because Alphanumeric sorting in the IDs -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="AMS-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <integer-id name="HumsGroupRefId">
+         <sample>123</sample>
+         <sample>GRP-123</sample>
+         <!-- Do not generate because Alphanumeric sorting in the IDs -->
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="GRP-" optional="true"/>
+         <constraints digits="4" max-value="9999"/>
+      </integer-id>
+
+      <string-id name="HumsMaintenanceAircraftId">
+         <sample>123</sample>
+         <sample>AC-123</sample>
+         <!-- Do not generate because Alphanumeric sorting in the IDs -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="AC-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <string-id name="HumsMaintenanceAlarmId">
+         <sample>123</sample>
+         <sample>ALRM-123</sample>
+         <!-- Do not generate because Alphanumeric sorting in the IDs -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="ALRM-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <string-id name="HumsMaintenanceBitId">
+         <sample>VersionA:Bit1</sample>
+         <sample>BIT-VersionB:Bit2</sample>
+         <!-- Do not generate because Alphanumeric sorting in the IDs -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="BIT-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <integer-id name="HumsMaintenanceBitOccurrenceId">
+         <generate code="FULL" converters="true" informer="NONE"/>
+         <fixed-prefix value="BITOCC-" optional="true"/>
+         <constraints/>
+      </integer-id>
+
+      <integer-id name="HumsMaintenanceOrsId">
+         <sample>123</sample>
+         <sample>ORS-123</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="ORS-" optional="true"/>
+         <constraints/>
+      </integer-id>
+
+      <string-id name="HumsMaintenanceReportDictionaryId">
+         <sample>123</sample>
+         <sample>DICO-123</sample>
+         <!-- Do not generate because Alphanumeric sorting in the IDs -->
+         <!-- overload of HumsMaintenanceReportDictionaryLifeCycle -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="DICO-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <string-id name="HumsMaintenanceSystemId">
+         <sample>VersionA:Sys1</sample>
+         <sample>SYS-VersionB:Sys2</sample>
+         <!-- Do not generate because Alphanumeric sorting in the IDs -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="SYS-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <integer-id name="HumsMaintenanceSystemTraceabilityId">
+         <sample>123</sample>
+         <sample>TRC-123</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="TRC-" optional="true"/>
+         <constraints/>
+      </integer-id>
+
+      <string-id name="HumsMaintenanceVersionId">
+         <sample>123</sample>
+         <sample>HUMS-123</sample>
+         <!-- Do not generate because Alphanumeric sorting in the IDs -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="HUMS-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <string-id name="HumsMaintenanceWordId">
+         <sample>VersionA:Word1</sample>
+         <sample>WORD-VersionB:Word2</sample>
+         <!-- Do not generate because Alphanumeric sorting in the IDs -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="WORD-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <string-id name="HumsMinNaviStateId">
+         <sample>123</sample>
+         <sample>ENM-123</sample>
+         <!-- Do not generate because Alphanumeric sorting in the IDs -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="ENM-" optional="true"/>
+         <constraints max-length="8"/>
+      </string-id>
+
+      <integer-id name="HumsOperCommentRefId">
+         <sample>123</sample>
+         <sample>OPERC-123</sample>
+         <!-- Do not generate because Alphanumeric sorting in the IDs -->
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="OPERC-" optional="true"/>
+         <constraints digits="4" max-value="9999"/>
+      </integer-id>
+
+      <integer-id name="HumsOperTechFuncRefId">
+         <sample>123</sample>
+         <sample>FCT-123</sample>
+         <!-- Do not generate because Alphanumeric sorting in the IDs -->
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="FCT-" optional="true"/>
+         <constraints digits="4" max-value="9999"/>
+      </integer-id>
+
+      <string-id name="HumsRawFcsId">
+         <sample>123</sample>
+         <sample>FCSR-123</sample>
+         <!-- Do not generate because Alphanumeric sorting in the IDs -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="FCSR-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <integer-id name="HumsSynonymousId">
+         <sample>123</sample>
+         <sample>SYN-123</sample>
+         <!-- Do not generate because Alphanumeric sorting in the IDs -->
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="SYN-" optional="true"/>
+         <constraints digits="6" max-value="999999"/>
+      </integer-id>
+
+      <integer-id name="IndicatorId">
+         <sample>10</sample>
+         <sample>IND-10</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="IND-" optional="true"/>
+         <constraints digits="6" max-value="999999"/>
+      </integer-id>
+
+      <string-id name="IndicatorTypeId">
+         <sample>IT-IType1</sample>
+         <sample>IType1</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="IT-" optional="true"/>
+         <constraints max-length="16"/>
+      </string-id>
+
+      <string-id name="InfoCodeId">
+         <sample>IC-ABC</sample>
+         <sample>ABC</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="IC-" optional="true"/>
+         <constraints max-length="3"/>
+      </string-id>
+
+      <!-- TODO Displayable => code=NONE -->
+      <string-id name="IplId">
+         <sample>0000AB</sample>
+         <generate code="NONE" converters="true" informer="NONE"/>
+         <constraints max-length="6" min-length="6"/>
+      </string-id>
+
+      <string-id name="IppId">
+         <description lang="fr">L'ipp est la concaténation d'un ManufacturerId et d'un IppNumber.</description>
+         <sample>F0000ABCD</sample>
+         <generate code="NONE" converters="true" informer="NONE"/>
+         <constraints max-length="9" min-length="9"/>
+      </string-id>
+
+      <string-id name="IppNumber">
+         <sample>ABCD</sample>
+         <generate code="NONE" converters="true" informer="NONE"/>
+         <constraints max-length="4" min-length="4" inner-spaces="true"/>
+      </string-id>
+
+      <string-id name="IsnNumber">
+         <sample>00A</sample>
+         <generate code="NONE" converters="true" informer="NONE"/>
+         <constraints max-length="3" min-length="3"/>
+      </string-id>
+
+      <integer-id name="KardexId">
+         <sample>123</sample>
+         <sample>MRK-123</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="MRK-" optional="true"/>
+         <constraints digits="5" max-value="99999"/>
+      </integer-id>
+
+      <string-id name="LabelId">
+         <sample>LBL-Label1</sample>
+         <sample>Label1</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="LBL-" optional="true"/>
+         <constraints max-length="10"/>
+      </string-id>
+
+      <string-id name="LocationId">
+         <sample>123</sample>
+         <sample>LOC-123</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="LOC-" optional="true"/>
+         <constraints max-length="3"/>
+      </string-id>
+
+      <integer-id name="LsaDescriptionId">
+         <sample>10</sample>
+         <sample>DESC-10</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="DESC-"/>
+         <constraints digits="7" max-value="9999999"/>
+      </integer-id>
+
+      <string-id name="LsaHlTaskId" abstract="true">
+         <generate code="NONE" converters="true" informer="NONE"/>
+         <multi-prefix>
+            <value text="ST-"/>
+            <value text="TSK-"/>
+         </multi-prefix>
+         <constraints max-length="16"/>
+      </string-id>
+
+      <integer-id name="LsaHlTaskOccurrenceId">
+         <sample>10</sample>
+         <sample>STO-10</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="STO-"/>
+         <constraints digits="7" max-value="9999999"/>
+      </integer-id>
+
+      <string-id name="LsaOperationId">
+         <sample>OP-RAF-32-11-AA-00-000</sample>
+         <generate code="PARTIAL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="OP-" optional="false"/>
+         <constraints max-length="35"/>
+      </string-id>
+
+      <integer-id name="LsaProcedureId">
+         <sample>123</sample>
+         <sample>PROC-123</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="PROC-"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <integer-id name="LsaProcedureLogisticId">
+         <sample>10</sample>
+         <sample>STL-10</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="STL-"/>
+         <constraints digits="7" max-value="9999999"/>
+      </integer-id>
+
+      <string-id name="LsaSubtaskId" extends="LsaHlTaskId">
+         <sample>10</sample>
+         <sample>ST-10</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="ST-"/>
+         <constraints max-length="16"/>
+      </string-id>
+
+      <string-id name="LsaTaskId" extends="LsaHlTaskId">
+         <sample>10</sample>
+         <sample>TSK-10</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="TSK-"/>
+         <constraints max-length="16"/>
+      </string-id>
+
+      <integer-id name="LsaTaskLogisticId">
+         <description lang="fr">Les 3 derniers digits correspondent au numéro de la logistique dans la tâche</description>
+         <sample>123100</sample>
+         <sample>TL-123111</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="TL-"/>
+         <constraints digits="7" max-value="9999999"/>
+      </integer-id>
+
+      <integer-id name="LsaVamomOperationFollowUpId">
+         <sample>123</sample>
+         <sample>VMM-123</sample>
+         <generate code="PARTIAL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="VMM-"/>
+         <constraints digits="7" max-value="9999999" format="%s%07d"/>
+      </integer-id>
+
+      <string-id name="LsacId" extends="ResourceId">
+         <sample>LSAC-RAF-32-00</sample>
+         <sample>LSAC-RAF-32-11-00</sample>
+         <sample>LSAC-RAF-32-11-AA-00</sample>
+         <sample>RAF-32-00</sample>
+         <sample>RAF-32-11-00</sample>
+         <sample>RAF-32-11-AA-00</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="LSAC-"/>
+         <constraints max-length="38"/>
+      </string-id>
+
+      <string-id name="MaintenanceBitId">
+         <sample>123</sample>
+         <sample>BIT-123</sample>
+         <!-- Do not generate because Alphanumeric sorting in the IDs -->
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="BIT-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <string-id name="MaintenanceWordId">
+         <sample>123</sample>
+         <sample>WORD-123</sample>
+         <!-- Do not generate because Alphanumeric sorting in the IDs -->
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="WORD-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <string-id name="ManufacturerId">
+         <sample>F6117</sample>
+         <sample>MFR-F6117</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="MFR-" optional="true"/>
+         <constraints max-length="5" min-length="5"/>
+      </string-id>
+
+      <string-id name="MetaEnumValueId">
+         <sample>Meta1-Value1</sample>
+         <sample>Meta2-Value1</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <any-prefix separator="-" max-length="16"/>
+         <constraints max-length="100" min-length="0" pattern="[a-zA-Z][a-zA-Z0-9_]*"/>
+      </string-id>
+
+      <string-id name="MetadataId">
+         <sample>KEY</sample>
+         <sample>KVP-KEY</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="KVP-" optional="true"/>
+         <constraints max-length="64"/>
+      </string-id>
+
+      <string-id name="MethodId">
+         <sample>Method1</sample>
+         <sample>MET-Method1</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="MET-" optional="true"/>
+         <constraints max-length="10"/>
+      </string-id>
+
+      <integer-id name="MgtActorId">
+         <sample>123</sample>
+         <sample>ACT-123</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="ACT-"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <integer-id name="MgtContractId">
+         <sample>123</sample>
+         <sample>CTT-123</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="CTT-"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <string-id name="MgtFlaskId" abstract="true">
+         <generate code="NONE" converters="true" informer="NONE"/>
+         <multi-prefix>
+            <value text="FLW-"/>
+            <value text="MTK-"/>
+         </multi-prefix>
+         <constraints max-length="10"/>
+      </string-id>
+
+      <string-id name="MgtFlowId" extends="MgtFlaskId">
+         <!-- <sample>123</sample> -->
+         <sample>FLW-123</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="FLW-"/>
+         <constraints max-length="9"/>
+      </string-id>
+
+      <integer-id name="MgtMilestoneId">
+         <sample>123</sample>
+         <!-- <sample>MIL-123</sample> -->
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="MIL-"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <integer-id name="MgtPotId">
+         <sample>123</sample>
+         <sample>POT-123</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="POT-"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <string-id name="MgtTaskId" extends="MgtFlaskId">
+         <!-- <sample>123</sample> -->
+         <sample>MTK-123</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="MTK-"/>
+         <constraints max-length="9"/>
+      </string-id>
+
+      <integer-id name="ModificationId">
+         <generate code="PARTIAL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="Mod-"/>
+         <constraints digits="6" max-value="999999"/>
+      </integer-id>
+
+      <string-id name="NuclassFtId">
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="NUC-" optional="true"/>
+         <constraints max-length="5" inner-spaces="true"/>
+      </string-id>
+
+      <string-id name="NuclassId" extends="ResourceId">
+         <sample>NUCLASS-XXXXX</sample>
+         <sample>XXXXX</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="NUCLASS-"/>
+         <constraints max-length="13"/>
+      </string-id>
+
+      <integer-id name="PartDefRupDependentId">
+         <sample>PDRD-44300234</sample>
+         <sample>PDRD-90000210</sample>
+         <sample>PDRD-74400123</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="PDRD-"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <integer-id name="PartDefRupIndependentId">
+         <sample>PDRI-996630023</sample>
+         <sample>PDRI-000521010</sample>
+         <sample>PDRI-0022000159</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="PDRI-"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <integer-id name="PartEvolutionId">
+         <sample>10</sample>
+         <sample>PE-001000999</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="PE-" optional="true"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <string-id name="PartId" extends="ResourceId">
+         <sample>PART-00000-PTXXX</sample>
+         <sample>R7802-PTXXX</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="PART-"/>
+         <constraints max-length="38" inner-spaces="true"/>
+      </string-id>
+
+      <integer-id name="PartInstanceId">
+         <sample>934</sample>
+         <sample>PI-001000934</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="PI-" optional="true"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <string-id name="PersonnelId" extends="ResourceId">
+         <sample>PERS-Personnel</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <constraints max-length="38"/>
+      </string-id>
+
+      <string-id name="PhysicalProductSetId" extends="ProductSetId">
+         <sample>PPHY-000001</sample>
+         <sample>01</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="PPHY-"/>
+         <constraints max-length="38"/>
+      </string-id>
+
+      <integer-id name="PmiVisitHlTaskOccurrenceId">
+         <sample>10</sample>
+         <sample>VO-001000999</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="VO-"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <integer-id name="PmiVisitId">
+         <sample>10</sample>
+         <sample>V-001000999</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="V-"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <integer-id name="PmiVisitLogisticId">
+         <sample>10</sample>
+         <sample>VL-001000999</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="VL-"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <string-id name="PositionId">
+         <sample>POS-Position</sample>
+         <sample>Position</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="POS-" optional="true"/>
+         <constraints max-length="10"/>
+      </string-id>
+
+      <string-id name="ProductId" extends="ResourceId">
+         <sample>PROD-00000-PNXXX</sample>
+         <sample>F6117-PNXXX</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="PROD-"/>
+         <constraints max-length="38" inner-spaces="true"/>
+      </string-id>
+
+      <string-id name="ProductSetId" extends="ResourceId" abstract="true">
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <constraints max-length="38"/>
+      </string-id>
+
+      <string-id name="RefProductDocId" extends="RefProductId">
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="PROD-"/>
+         <constraints max-length="38" inner-spaces="true"/>
+      </string-id>
+
+      <string-id name="RefProductFtId" extends="RefProductId">
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="PROD-"/>
+         <constraints max-length="38" inner-spaces="true"/>
+      </string-id>
+
+      <integer-id name="RefProductGseId">
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="PROD-"/>
+         <constraints min-value="1"/>
+      </integer-id>
+
+      <string-id name="RefProductId" abstract="true">
+         <generate code="NONE" converters="false"/>
+         <fixed-prefix value="PROD-"/>
+         <constraints max-length="38" inner-spaces="true"/>
+      </string-id>
+
+      <string-id name="RefProductIpcId" extends="RefProductId">
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="PROD-"/>
+         <constraints max-length="38" inner-spaces="true"/>
+      </string-id>
+
+      <string-id name="RefProductPatchId" extends="RefProductId">
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="PROD-"/>
+         <constraints max-length="38" inner-spaces="true"/>
+      </string-id>
+
+      <string-id name="ResourceId" abstract="true">
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <multi-prefix>
+            <value text="LSAC-"/>
+            <value text="PROD-"/>
+            <value text="PSET-"/>
+            <value text="PERS-"/>
+            <value text="NRGY-"/>
+            <value text="GSE-"/>
+         </multi-prefix>
+         <constraints max-length="38" inner-spaces="true"/>
+      </string-id>
+
+      <string-id name="RfdId">
+         <sample>001</sample>
+         <sample>RFD-001</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="RFD-" optional="true"/>
+         <constraints max-length="10"/>
+      </string-id>
+
+      <integer-id name="RmpApplicabilityId">
+         <sample>10</sample>
+         <sample>RMPA-10</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="RMPA-"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <!-- TODO add pattern -->
+      <string-id name="RmpEntryId">
+         <sample>RMPENT-RAF-32-00</sample>
+         <sample>RMPENT-RAF-32-11-00</sample>
+         <sample>RMPENT-RAF-32-11-AA-00</sample>
+         <sample>RAF-32-00</sample>
+         <sample>RAF-32-11-00</sample>
+         <sample>RAF-32-11-AA-00</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="RMPENT-"/>
+         <constraints max-length="25" min-length="9"/>
+      </string-id>
+
+      <integer-id name="RmpLimitId">
+         <sample>10</sample>
+         <sample>RMPL-10</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="RMPL-"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <integer-id name="RmpLimitTypeId">
+         <sample>10</sample>
+         <sample>RMPLT-10</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="RMPLT-"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <integer-id name="RmpOperationId">
+         <sample>10</sample>
+         <sample>RMPO-10</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="RMPO-"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <integer-id name="RmpOperationTypeId">
+         <sample>10</sample>
+         <sample>RMPOT-10</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="RMPOT-"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <integer-id name="RmpSubApplicabilityId">
+         <description lang="fr">Les 2 derniers digits correspondent au numéro de la sous-applicabilité dans l'applicabilité</description>
+         <sample>10111</sample>
+         <sample>RMPSA-10111</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="RMPSA-"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <integer-id name="RmpUnitId">
+         <sample>10</sample>
+         <sample>RMPU-10</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="RMPU-"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <integer-id name="RmpVisitTypeId">
+         <sample>10</sample>
+         <sample>RMPVT-10</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="RMPVT-"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <integer-id name="RnjSheetId">
+         <sample>10</sample>
+         <sample>RNJS-10</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="RNJS-"/>
+         <constraints digits="5" max-value="99999"/>
+      </integer-id>
+
+      <integer-id name="RupId">
+         <sample>004422021</sample>
+         <sample>RUP-001000934</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="RUP-" optional="true"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <integer-id name="RupPathId">
+         <sample>10</sample>
+         <sample>R-10</sample>
+         <generate code="FULL" converters="true" informer="NONE"/>
+         <fixed-prefix value="R-"/>
+         <constraints digits="9" max-value="999999999"/>
+      </integer-id>
+
+      <string-id name="SbServiceBulletinId">
+         <sample>123</sample>
+         <sample>SB-123</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="SB-" optional="true"/>
+         <constraints max-length="255" inner-spaces="true"/>
+      </string-id>
+
+      <string-id name="ScvElaborateId">
+         <description lang="fr">Identifiant d'un bit SCV élaboré.</description>
+         <sample>SCVELAB-10000</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="SCVELAB-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <string-id name="SensitiveId">
+         <description lang="fr">Identifiant d'un observable (Sensitive)</description>
+         <sample>SNS-10000</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="SNS-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <string-id name="SfAskId">
+         <sample>A:123</sample>
+         <sample>SfASK-A:123</sample>
+         <!-- Do not generate because Alphanumeric sorting in the IDs -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="SfASK-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <string-id name="SfFilterId">
+         <sample>A:123</sample>
+         <sample>SfFILTER-A:123</sample>
+         <!-- Do not generate because Alphanumeric sorting in the IDs -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="SfFILTER-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <string-id name="SfSubFilterId">
+         <sample>A:123</sample>
+         <sample>SubSfFILTER-A:123</sample>
+         <!-- Do not generate because Alphanumeric sorting in the IDs -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="SubSfFILTER-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <integer-id name="SipId">
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="SIP-" optional="true"/>
+         <constraints digits="5" max-value="99999"/>
+      </integer-id>
+
+      <!-- TODO Max length ? -->
+      <string-id name="StandardId">
+         <sample>F1</sample>
+         <sample>STD-F1</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="STD-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <string-id name="StandardSetId">
+         <sample>F1 F2 F3</sample>
+         <generate code="NONE" converters="true" informer="NONE"/>
+         <constraints max-length="255" min-length="0" inner-spaces="true"/>
+      </string-id>
+
+      <string-id name="SystemTypeId">
+         <sample>RAF</sample>
+         <sample>SYS-RAF</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="SYS-" optional="true"/>
+         <constraints max-length="3"/>
+      </string-id>
+
+      <string-id name="TagId">
+         <sample>Tag1</sample>
+         <sample>TAG-Tag1</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="TAG-" optional="true"/>
+         <constraints max-length="10"/>
+      </string-id>
+
+      <string-id name="TechnicalProductSetId" extends="ProductSetId">
+         <sample>PTEC-000001</sample>
+         <sample>01</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="PTEC-"/>
+         <constraints max-length="38"/>
+      </string-id>
+
+      <integer-id name="TrblAnalysisSetId">
+         <description lang="fr">Identifiant d'une analyse de testabilité</description>
+         <sample>AS-00001</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="AS-"/>
+         <constraints digits="5" max-value="99999"/>
+      </integer-id>
+
+      <integer-id name="TrblConstituentTemplateId">
+         <description lang="fr">Identifiant d'un équipement générique</description>
+         <sample>CT-000001</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="CT-"/>
+         <constraints digits="6" max-value="999999"/>
+      </integer-id>
+
+      <string-id name="TrblDocId" abstract="true">
+         <description lang="fr">Identifiant d'un document de testabilité.</description>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <multi-prefix>
+            <value text="FIPE-"/>
+            <value text="VT"/>
+         </multi-prefix>
+         <constraints max-length="32"/>
+      </string-id>
+
+      <integer-id name="TrblElementId">
+         <description lang="fr">Identifiant d'un trblElement, qui est l'objet intermédiaire entre le LSAC et le lruFmNode</description>
+         <sample>TRBL-000001</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="TRBL-"/>
+         <constraints digits="6" max-value="999999"/>
+      </integer-id>
+
+      <integer-id name="TrblFailureModeId">
+         <description lang="fr">Identifiant d'un mode de défaillance</description>
+         <sample>FM-000001</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="FM-"/>
+         <constraints digits="6" max-value="999999"/>
+      </integer-id>
+
+      <string-id name="TrblFailureSetId">
+         <description lang="fr">Identifiant d'un cas de panne</description>
+         <sample>FS1-1001e931</sample>
+         <sample>FS2-1001e931</sample>
+         <sample>USR-1001e931</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <multi-prefix>
+            <value text="FS1-"/>
+            <value text="FS2-"/>
+            <value text="USR"/>
+         </multi-prefix>
+         <constraints max-length="12"/>
+      </string-id>
+
+      <string-id name="TrblFipElementId" extends="TrblDocId">
+         <description lang="fr">Identifiant d'un test de réduction d'incertitude</description>
+         <sample>FIPE-0</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="FIPE-"/>
+         <constraints max-length="32"/>
+      </string-id>
+
+      <integer-id name="TrblLinkId">
+         <description lang="fr">Identifiant des liens inter-système</description>
+         <sample>L-000001</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="L-" optional="true"/>
+         <constraints digits="6" max-value="9999999"/>
+      </integer-id>
+
+      <integer-id name="TrblLocalisedVirtualSymptomId">
+         <description lang="fr">Identifiant de la relation qui permet de relier le triplet : LSAC/LruFmNode/VirtualSymptom</description>
+         <sample>LVS-000001</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="LVS-" optional="true"/>
+         <constraints digits="6" max-value="9999999"/>
+      </integer-id>
+
+      <integer-id name="TrblLruFmNodeFailureSetId">
+         <description lang="fr">Identifiant de la relation qui relie chaque lien LSAC-FailureMode à un cas de panne</description>
+         <sample>LFMFS-0000001</sample>
+         <generate code="FULL" converters="true" informer="NONE"/>
+         <fixed-prefix value="LFMFS-" optional="true"/>
+         <constraints digits="7" max-value="9999999"/>
+      </integer-id>
+
+      <integer-id name="TrblLruFmNodeFipElementId">
+         <description lang="fr">Identifiant qui permet de relier des tests de réduction d'incertitude au mode de défaillance de l'équipement qu'ils considèrent</description>
+         <sample>LFNFIP-000001</sample>
+         <generate code="FULL" converters="true" informer="NONE"/>
+         <fixed-prefix value="LFNFIP-" optional="true"/>
+         <constraints digits="6" max-value="999999"/>
+      </integer-id>
+
+      <integer-id name="TrblLruFmNodeId">
+         <description lang="fr">Identifiant d'un LruFmNode qui est une instance localisée de FailureMode</description>
+         <sample>LRUFM-000001</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="LRUFM-" optional="true"/>
+         <constraints digits="6" max-value="999999"/>
+      </integer-id>
+
+      <integer-id name="TrblLruFmNodeValidationTestId">
+         <description lang="fr">Identifiant de la retlation qui lie les tests de validation aux LruFmNodes</description>
+         <sample>LFNVT-000001</sample>
+         <generate code="FULL" converters="true" informer="NONE"/>
+         <fixed-prefix value="LFNVT-" optional="true"/>
+         <constraints digits="6" max-value="999999"/>
+      </integer-id>
+
+      <string-id name="TrblSymptomId">
+         <description lang="fr">Identifiant d'un symptôme générique</description>
+         <sample>SYMP:SNS-000001</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="SYMP"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <string-id name="TrblValidationTestId" extends="TrblDocId">
+         <description lang="fr">Identifiant d'un test de validation</description>
+         <sample>VT-0</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="VT-"/>
+         <constraints max-length="32"/>
+      </string-id>
+
+      <string-id name="UnitId">
+         <sample>DOM1-Unit1</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <any-prefix separator="-" max-length="16"/>
+         <constraints max-length="32" min-length="0" inner-spaces="true"/>
+      </string-id>
+
+      <string-id name="VersionId">
+         <sample>M</sample>
+         <sample>VSN-M</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="VSN-" optional="true"/>
+         <constraints max-length="6"/>
+      </string-id>
+
+      <string-id name="VersionSetId">
+         <sample>M B C</sample>
+         <generate code="NONE" converters="true" informer="NONE"/>
+         <constraints max-length="255" min-length="0" inner-spaces="true"/>
+      </string-id>
+
+      <string-id name="VirtualSymptomId">
+         <description lang="fr">Identifiant d'un symptome virtuel (utilisé dans l'inter-système)</description>
+         <sample>VTS-000001</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="VTS-" optional="true"/>
+         <constraints max-length="255"/>
+      </string-id>
+
+      <string-id name="WorkCardId">
+         <sample>123</sample>
+         <sample>WC-123</sample>
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="WC-" optional="true"/>
+         <constraints max-length="30" inner-spaces="true"/>
+      </string-id>
+
+      <integer-id name="WorkshopId">
+         <sample>123</sample>
+         <sample>WKS-123</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="WKS-" optional="true"/>
+         <constraints digits="5" max-value="99999"/>
+      </integer-id>
+
+      <integer-id name="WorkshopTypeId">
+         <sample>123</sample>
+         <sample>WST-123</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="WST-"/>
+         <constraints digits="6" max-value="999999"/>
+      </integer-id>
+
+      <string-id name="ZoneId">
+         <sample>123</sample>
+         <sample>ZN-123</sample>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <fixed-prefix value="ZN-" optional="true"/>
+         <constraints max-length="30"/>
+      </string-id>
+   </package>
+
+   <package name="da.ibacs.business" converters="da.ibacs.business.converters.generated" informers="da.ibacs.support.informers">
+      <enum name="Language">
+         <description lang="fr">Enumération définissant les langues disponibles dans l'applicatif.</description>
+         <generate code="NONE" converters="true" informer="STANDARD"/>
+         <value name="FRENCH" code="Fr" label="French"/>
+         <value name="ENGLISH" code="En" label="English"/>
+      </enum>
+   </package>
+
+   <package name="da.ibacs.business.enums" converters="da.ibacs.business.converters.generated" informers="da.ibacs.support.informers">
+      <enum name="ASP">
+         <description lang="fr">Indique dans l'ipc si l'article est une pièce de fixation de stockage ou de colissage.</description>
+         <description lang="en">ATTACHING, STORAGE OR SHIPPING PART.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="ATTACHING_PART" code="1" label="Attaching part"/>
+         <value name="STORAGE_PART" code="2" label="Storage part"/>
+         <value name="SHIPPING_PART" code="3" label="Shipping"/>
+      </enum>
+
+      <enum name="Category">
+         <description lang="fr">Différentes valeurs de catégorie pour un article.
+Dépend du point d'emploi et de la version d'avion.</description>
+         <!-- Can not be generated because of priority order different from viewing
+            order -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <value name="A" code="A" label="fourniture client, monté client"/>
+         <value name="B" code="B" label="fourniture client, monté avionneur"/>
+         <value name="C" code="C" label="fourniture avionneur, monté avionneur"/>
+         <value name="D" code="D" label="avion capable d’un matériel optionnel non acheté par le client"/>
+         <value name="P" code="P" label="matériel optionnel acheté par le client"/>
+      </enum>
+
+      <enum name="CfgTypeKind">
+         <description lang="fr">Enumeration des Types possibles des Types de Configuration.</description>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <value name="ENUMERATION" label="Enumeration" code="ENU"/>
+         <value name="INTEGER" label="Integer" code="NAT"/>
+      </enum>
+
+      <enum name="ChangeImpact">
+         <description lang="fr">Enumération des impacts possibles d'un fait générateur sur une cible.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="NONE" code="N" label="None">
+            <description lang="fr">Le fait générateur n'a aucun impact sur la cible.</description>
+         </value>
+         <value name="POSSIBLE" code="P" label="Possible">
+            <description lang="fr">Le fait générateur a peut-être un impact sur la cible. Ceci doit être confirmé ou infirmé par une étude ultérieure.</description>
+         </value>
+         <value name="CONFIRMED" code="C" label="Confirmed">
+            <description lang="fr">Le fait générateur a un impact avéré sur la cible.</description>
+         </value>
+      </enum>
+
+      <enum name="CodificationStatus">
+         <description lang="fr">Etat de codification d'un article.
+Valable au FT (DMD1) et à l'IPC.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="CODIFICATION_NOT_VERIFIED" code="0" label="Codification not verified"/>
+         <value name="CODIFICATION_VERIFIED_AND_VALID" code="1" label="Codification verified and valid"/>
+         <value name="CODIFICATION_VERIFIED_BUT_INVALID" code="2" label="Codification verified but invalid"/>
+         <value name="SAME_REFERENCE" code="3" label="Same reference"/>
+         <value name="INSUFICIENT_DATA" code="4" label="Insuficient data"/>
+         <value name="NOT_CODIFIED" code="5" label="Not codified"/>
+         <value name="FICTITIOUS_REFERENCE" code="6" label="Fictitious reference"/>
+      </enum>
+
+      <enum name="ContractStatus">
+         <description lang="en">Define if the element is linked to a prospecting contract.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="PROSPECTING" code="P" label="Prospecting"/>
+         <value name="DEVELOPMENT" code="D" label="Development"/>
+         <value name="SUPPORT" code="S" label="Support"/>
+      </enum>
+
+      <enum name="DataChangeType">
+         <description lang="fr">Enumération des types possibles de changements d'une donnée.</description>
+         <!-- Can not be generated because of DisplayableWithToolTip -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <value name="CREATED" code="C" label="Created">
+            <description lang="fr">La donnée a été créée.</description>
+         </value>
+         <value name="UPDATED" code="U" label="Updated">
+            <description lang="fr">La donnée a été mise à jour.</description>
+         </value>
+         <value name="DELETED" code="D" label="Deleted">
+            <description lang="fr">La donnée a été supprimée.</description>
+         </value>
+      </enum>
+
+      <enum name="DataModuleDtd">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="AIRCREW" code="ACRW" label="Aircrew"/>
+         <value name="COMPONENT_LIST" code="COMPCH" label="Component List"/>
+         <value name="DESCRIPTION" code="DESCRIPT" label="Description"/>
+         <value name="IPC" code="IPC" label="IPC"/>
+         <value name="PROCEDURAL" code="PROCED" label="Procedural"/>
+         <value name="SCHEDULE" code="SCHEDULE" label="Schedule"/>
+         <value name="WIRING" code="WIRING" label="Wiring"/>
+      </enum>
+
+      <enum name="DataModuleIssueNumberType">
+         <description lang="en">Status of a DocModule.
+ Indicates why the DocModule has been updated.
+ If set to Deleted => the DocModule is not active and should not be considered in relation links with Operation/subtask.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="CHANGED" code="C" label="Changed Partially"/>
+         <value name="DELETED" code="D" label="Deleted"/>
+         <value name="NEW" code="N" label="New"/>
+         <value name="REVISED" code="R" label="Revised Deeply"/>
+         <value name="STATUS_UPDATED" code="S" label="Status Updated"/>
+         <value name="REACTIVATED" code="T" label="Reactivated"/>
+      </enum>
+
+      <enum name="DataModuleLogisticUsage">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="SYSTEMATIC" code="S" label="Systematic"/>
+         <value name="UNSYSTEMATIC" code="U" label="Unsystematic"/>
+      </enum>
+
+      <enum name="DataModuleResourceIdType">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="MFR_PNR" code="MFR" label="MFR-PNR"/>
+         <value name="IPP_CSN" code="CSN" label="IPP-CSN"/>
+         <value name="IPP_CSN_ISN" code="ISN" label="IPP-CSN-ISN"/>
+         <value name="TITLE" code="STD" label="Title"/>
+      </enum>
+
+      <enum name="DataModuleResourceType">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="SPARE" code="SPARE" label="Spare"/>
+         <value name="MISC" code="MISC" label="Misc"/>
+         <value name="GSE" code="GSE" label="Ground Support Equipment"/>
+         <value name="TOOL" code="TOOL" label="Standard Tool"/>
+      </enum>
+
+      <enum name="DataModuleRestriction">
+         <description lang="en">Restriction of a DocModule.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="NONE" code="" label="None"/>
+         <value name="SPECIAL_FRANCE" code="TOTAL" label="Special France"/>
+         <value name="SPECIAL_FRANCE_PARTIEL" code="PARTIEL" label="Special France Partiel"/>
+      </enum>
+
+      <enum name="DataModuleSecurity">
+         <description lang="en">Security classification of a DocModule.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="NP" code="NP" label="Not Protected"/>
+         <value name="DR" code="DR" label="Restricted Diffusion"/>
+         <value name="CD" code="CD" label="Confidential Defense"/>
+      </enum>
+
+      <enum name="DataModuleTopSection">
+         <description lang="en">Order of declarations matters.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="ALL" code="A" label="All"/>
+         <value name="PREREQ" code="P" label="Prereq"/>
+         <value name="SAFETY" code="S" label="Safety"/>
+         <value name="MAIN" code="M" label="Main"/>
+         <value name="CLOSEUP" code="C" label="CloseUp"/>
+      </enum>
+
+      <enum name="DefAppro">
+         <!-- Can not be generated because of DisplayableWithToolTip -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <value name="SPARE" code="SP" label="Spare"/>
+         <value name="EVOLVED_SPARE" code="EP" label="Evolved spare"/>
+         <value name="NOT_SPARE" code="NS" label="Not spare"/>
+         <value name="LOCALLY_MANUFACTURED" code="LM" label="Locally manufactured"/>
+         <value name="EVOLVED_LOCALLY_MANUFACTURED" code="EL" label="Evolved locally manufactured"/>
+         <value name="IPD" code="IP" label="IPD"/>
+         <value name="EVOLVED_IPD" code="EI" label="Evolved IPD"/>
+      </enum>
+
+      <enum name="DefinitionOrigin">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="DEFINED" code="U" label="Defined"/>
+         <value name="DERIVED" code="D" label="Derived"/>
+         <value name="BOTH" code="B" label="Both"/>
+      </enum>
+
+      <enum name="DocModuleType">
+         <description lang="fr">Enumération des types possibles de Modules Documentaires.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="DM" code="DM-" label="Data Module"/>
+         <value name="SB" code="SB-" label="Service Bulletin"/>
+         <value name="WC" code="WC-" label="Work Card"/>
+         <value name="MM" code="MM-" label="Maintenance Manual"/>
+         <value name="OTHER" code="OTHER-" label="Other doc module"/>
+      </enum>
+
+      <enum name="DocPublicationType">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="OPTIONNEL" code="OPTIONNEL" label="Optionnel"/>
+         <value name="EQUIPEMENT" code="EQUIPEMENT" label="Equipement"/>
+         <value name="MAINTENANCE" code="MAINTENANCE" label="Maintenance"/>
+         <value name="MAINTENANCECD" code="MAINTENANCE CD" label="Maintenance CD"/>
+         <value name="EQUIPAGE" code="EQUIPAGE" label="Equipage"/>
+         <value name="EQUIPAGECD" code="EQUIPAGE CD" label="Equipage CD"/>
+         <value name="ATEMERMOZ" code="ATE MERMOZ" label="ATE Mermoz"/>
+         <value name="IPCAVION" code="IPCAVION" label="IPC Avion"/>
+         <value name="FRONTIERE" code="FRONTIERE" label="Frontiere"/>
+         <value name="SOF" code="SOF" label="SOF"/>
+         <value name="MS" code="MS" label="MS"/>
+         <value name="OPTIDOCPERIME" code="OPTIDOC PERIME" label="Optidoc Perime"/>
+         <value name="ATROUVER" code="A trouver" label="A Trouver"/>
+         <value name="NONE" code="" label="None"/>
+      </enum>
+
+      <enum name="EntityLifeStatus">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="ALIVE" code="A" label="Alive"/>
+         <value name="DEPRECATED" code="P" label="Deprecated"/>
+         <value name="DEAD" code="D" label="Dead"/>
+         <value name="UNKNOWN" code="U" label="Unknown"/>
+      </enum>
+
+      <enum name="EntityOrigin">
+         <description lang="fr">Interne : indique que l'objet a été créé dans IBACS
+Externe : L'objet provient d'un référentiel externe.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="INTERN" code="I" label="Intern"/>
+         <value name="EXTERN" code="E" label="Extern"/>
+      </enum>
+
+      <enum name="GseApplicabilityStatus">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="APPLICABLE" code="X" label="Applicable"/>
+         <value name="APP_SPECIALIST" code="S" label="Applicable Specialist"/>
+         <value name="OBSOLETE" code="P" label="Obsolete"/>
+         <value name="NOT_APPLICABLE" code="NA" label="Not Appplicable"/>
+      </enum>
+
+      <enum name="GseReparabilityEchelon">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="ECHELON_1" code="ECH1" label="Equivalent NTI1"/>
+         <value name="ECHELON_2" code="ECH2" label="Equivalent NTI2"/>
+         <value name="ECHELON_4" code="ECH4" label="Equivalent NTI3"/>
+         <value name="EI" code="EI" label="Equivalent EI"/>
+         <value name="GV" code="GV" label="Equivalent GV"/>
+      </enum>
+
+      <enum name="GseState">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="DEVELOPMENT" code="1" label="In development"/>
+         <value name="TO_VALIDATE" code="2" label="First example to validate"/>
+         <value name="MANUFACTURING" code="3" label="Good for manufacturing"/>
+         <value name="DEF_REVIEWING" code="4" label="Definition to review"/>
+         <value name="NOT_AVAILABLE" code="5" label="Not available"/>
+      </enum>
+
+      <enum name="GseTdsState">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="NO" code="1" label="No"/>
+         <value name="TO_DO" code="2" label="To do"/>
+         <value name="TO_VALIDATE" code="3" label="To validate"/>
+         <value name="RELEASED" code="4" label="Released"/>
+      </enum>
+
+      <enum name="HumsChannelNumber">
+         <description lang="en">Indicates the channel number of a maintenance system</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="CHANNEL_ZERO" code="0" label="Channel 0"/>
+         <value name="CHANNEL_ONE" code="1" label="Channel 1"/>
+         <value name="CHANNEL_TWO" code="2" label="Channel 2"/>
+         <value name="CHANNEL_ALL" code="3" label="All Channels"/>
+         <value name="NOT_USED" code="" label="Not used"/>
+      </enum>
+
+      <enum name="HumsFailureType">
+         <description lang="en">Indicates if the nature of a failure</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="Sure" code="1" label="Sure failure"/>
+         <value name="Ambiguous" code="2" label="Ambiguous failure"/>
+         <value name="NOT_USED" code="" label="Not used"/>
+      </enum>
+
+      <enum name="HumsFlagRecord">
+         <description lang="en">Activates the record flag of the diary</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="Activation_0" code="0" label="Activation 0"/>
+         <value name="Activation_1" code="1" label="Activation 1"/>
+         <value name="Activation_2" code="2" label="Activation 2"/>
+      </enum>
+
+      <enum name="HumsKind">
+         <description lang="en">Indicates the kind of the failure</description>
+         <generate code="NONE" converters="true" informer="STANDARD"/>
+         <value name="Kind_U" code="S" label="Kind Unique"/>
+         <value name="Kind_D" code="D" label="Kind Double"/>
+         <value name="NOT_USED" code="" label="Not used"/>
+      </enum>
+
+      <enum name="HumsReserve">
+         <description lang="en">Indicates if the element is used or not</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="Reserve" code="1" label="Reserve"/>
+         <value name="Not_Reserve" code="0" label="Not Reserve"/>
+      </enum>
+
+      <enum name="HumsTypeSystem">
+         <description lang="en">Indicates the type of a system</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="CH" code="CH" label="load"/>
+         <value name="EP" code="EP" label="Primary Equipment"/>
+         <value name="EC" code="EC" label="Pod RECO"/>
+         <value name="SA" code="SA" label="Aircraft System"/>
+         <value name="SNA" code="SNA" label="Weapon Delivery and Navigation System"/>
+      </enum>
+
+      <enum name="HumsTypeSystemENM">
+         <description lang="en">Indicates the system type of Number NaviState</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="SA" code="SA" label="Aircraft System"/>
+         <value name="SNA" code="SNA" label="Weapon Delivery and Navigation System"/>
+      </enum>
+
+      <enum name="ImpactType">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="NONE" code="N" label="None"/>
+         <value name="TO_BE_CONFIRMED" code="P" label="To be confirmed"/>
+         <value name="FULLY_APPLIED" code="C" label="Fully applied"/>
+      </enum>
+
+      <enum name="IndicatorNature">
+         <description lang="fr">Enumération des types possibles d'indicateurs.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="THEORETICAL" code="T" label="Theoretical">
+            <description lang="fr">La valeur de l'indicateur est purement théorique.</description>
+         </value>
+         <value name="OBSERVED" code="C" label="Observed">
+            <description lang="fr">La valeur de l'indicateur est obtenue via du RETEX.</description>
+         </value>
+         <value name="PROJECTED" code="P" label="Projected">
+            <description lang="fr">La valaur de l'indicateur est projetée dans le futur à partir de données théoriques ou observées, connues à un instant.</description>
+         </value>
+         <value name="KEPT_PROPOSAL" code="R" label="Kept Proposal">
+            <description lang="fr">La valeur de l'indicateur est celle qu'il faut utiliser dans une proposition.
+Elle peut être, pour différentes raisons, différente des valeurs calculées ou observées.</description>
+         </value>
+      </enum>
+
+      <enum name="Level">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="HIGH" code="H" label="High"/>
+         <value name="LOW" code="L" label="Low"/>
+      </enum>
+
+      <enum name="LimitLifeInStorageType">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="TEMPERATES_CLIMATS" code="0" label="Temperate Climats"/>
+         <value name="TROPICAL_CLIMATS" code="1" label="Tropical Climats"/>
+      </enum>
+
+      <enum name="LimitLifeInUtilizationType">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="TYPE_1" code="1" label="Durée maximale d’utilisation effective du matériel avant son retrait définitif du service."/>
+         <value name="TYPE_2" code="2" label="Limite de vie d’une pièce en début d’utilisation de l’avion, jusqu’au 1er remplacement."/>
+      </enum>
+
+      <enum name="LocallyManufactured">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="YES" code="Y" label="Locally manufactured"/>
+         <value name="YES_WITH_COMPONENTS" code="C" label="Locally manufactured with components"/>
+         <value name="DEPENDS" code="D" label="Depends of use point"/>
+         <value name="NO" code="N" label="No"/>
+      </enum>
+
+      <enum name="LsaControlNecessityCode">
+         <description lang="en">Indicates if a controller is mandatory to check task/operation.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="YES" code="Y" label="A controler is required to check the operation"/>
+         <value name="NO" code="N" label="No controler person is required"/>
+      </enum>
+
+      <enum name="LsaCriticalityCode">
+         <description lang="en">Precises the criticality on aircraft if the LSA task/operation is not perfectly accomplished.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="NOT_CRITICAL" code="N" label="Not critical if operation is not perfectly accomplished"/>
+         <value name="CRITICAL" code="Y" label="Critical on aircraft if operation is not perfectly accomplished"/>
+      </enum>
+
+      <enum name="LsaDemonstrationCode">
+         <description lang="en">Indicates if a task/operation must be demonstrated in VAMOM on an aircraft.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="YES" code="Y" label="Demonstrated"/>
+         <value name="NO" code="N" label="Not demonstrated"/>
+         <value name="ASK" code="D" label="Asked for a demonstration"/>
+      </enum>
+
+      <enum name="LsaFacilityRequirement">
+         <description lang="en">Indicates if infrastructure data are set for the given operation/task.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="NODATA" code="N" label="No infrastructure data exist for the given task"/>
+         <value name="DATA" code="Y" label=" Infrastructure data exist for the given task"/>
+      </enum>
+
+      <enum name="LsaHazardousCode">
+         <description lang="en">Indicates if there is potential danger or risk of injury when accomplishing LSA task/operation.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="NODANGER" code="D" label="No hazard/danger"/>
+         <value name="DANGER" code="B" label="Danger : risk of severe injury"/>
+      </enum>
+
+      <enum name="LsaHlTaskType">
+         <description lang="fr">Enumération des types possibles de Tâches ASL concrètes.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="TASK" code="TASK" label="Task">
+            <description lang="fr">La Tâche concrète est une Tâche (séquence ordonnée de Tâches et de Sous-Tâches).</description>
+         </value>
+         <value name="SUB_TASK" code="SUBT" label="Subtask">
+            <description lang="fr">La Tâche concrète est une Sous-Tâche (élément terminal non décomposable).</description>
+         </value>
+      </enum>
+
+      <enum name="LsaIllustrationNecessity">
+         <description lang="en">Indicates if a controller is mandatory in personal to check task/operation.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="YES" code="Y" label="One or more illustrations are necessary to accomplisk task"/>
+         <value name="NO" code="N" label="Not illustration necessary"/>
+      </enum>
+
+      <enum name="LsaMaintenanceSupportOrganisation">
+         <description lang="en">A sub enum used to decode 2nd char of Taskcode enum. 
+ (according to MIL STD-1388-2B specification) 2nd char => maintenance Level.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="SERVICING" code="C" label="Servicing (Mise en Oeuvre)"/>
+         <value name="O_LEVEL" code="O" label="Operational level (NTI1)."/>
+         <value name="I_LEVEL_AFLOAT_OR_ON_GROUND" code="F" label="Intermediate level / afloat or on ground (NTI2 / embarqué ou à terre)."/>
+         <value name="I_LEVEL_AFLOAT_ONLY" code="G" label="Intermediate level / afloat only (NTI2 / embarqué uniquement)."/>
+         <value name="I_LEVEL_ON_GROUND_ONLY" code="H" label="Intermediate level / on ground only (NTI2 / à terre uniquement)."/>
+         <value name="D_LEVEL_CUSTOMER" code="D" label="Depot level / customer (NTI3 - industriel chez le client)."/>
+         <value name="D_LEVEL_INDUSTRIAL" code="L" label="Depot level / industrial (NTI3 / chez l'industriel)."/>
+      </enum>
+
+      <enum name="LsaOperabilityCode">
+         <description lang="en">A sub enum used to decode 3rd char of TaskCode enum. 
+ (according to MIL STD-1388-2B specification) 3rd char => operability code.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="NOT_MISSION_CAPABLE" code="E" label="Not mission capable"/>
+         <value name="FULL_MISSION_CAPABLE" code="C" label="Full mission capable."/>
+         <value name="OFF_EQUIPMENT_MAINTENANCE" code="G" label="Off Equipment Maintenance."/>
+         <value name="TURNAROUND" code="F" label="Turnaround."/>
+      </enum>
+
+      <enum name="LsaOperationCode">
+         <description lang="en">A sub enum used to decode 1rst char of Taskcode enum. 
+  (according to MIL STD-1388-2B specification) 1rst char => Operation code.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="CODE1" code="A" label="Inspection"/>
+         <value name="CODE2" code="B" label="Test by measuring characteristics."/>
+         <value name="CODE3" code="C" label="Servicing."/>
+         <value name="CODE4" code="D" label="Adjust to maintain within prescribed limits."/>
+         <value name="CODE5" code="E" label="Align a system to bring about optimum performance."/>
+         <value name="CODE6" code="F" label="Calibrate."/>
+         <value name="CODE7" code="G" label="Install fit a spare part into the next higher assembly."/>
+         <value name="CODE8" code="H" label="Remove and replace."/>
+         <value name="CODE9" code="J" label="Repair, restore in order."/>
+         <value name="CODE10" code="K" label="RG overhaulg."/>
+         <value name="CODE11" code="L" label="Rebuild only for NTI2 operation."/>
+         <value name="CODE12" code="M" label="Mission profile change."/>
+         <value name="CODE13" code="N" label="Diagnostic fault location."/>
+         <value name="CODE14" code="O" label="Operate."/>
+         <value name="CODE15" code="P" label="Lubricate."/>
+         <value name="CODE16" code="Q" label="Clean."/>
+         <value name="CODE17" code="R" label="Remove."/>
+         <value name="CODE18" code="S" label="Disassemble/assemble."/>
+         <value name="CODE19" code="T" label="Transportation preparation."/>
+         <value name="CODE20" code="U" label="package/Unpackage."/>
+         <value name="CODE21" code="V" label="Storage/ Preserve."/>
+         <value name="CODE22" code="W" label="Accessibility."/>
+         <value name="CODE23" code="Y" label="Transport."/>
+         <value name="CODE24" code="Z" label="end of runway inspection."/>
+         <value name="CODE25" code="2" label="Debug, detect remedy inadequacy in software."/>
+         <value name="CODE26" code="3" label="Dispose."/>
+         <value name="CODE27" code="4" label="Load/unload."/>
+         <value name="CODE28" code="5" label="Set up an item ready for operation."/>
+         <value name="CODE29" code="6" label="Monitor."/>
+         <value name="CODE30" code="7" label="Process."/>
+         <value name="CODE31" code="8" label="Evaluate."/>
+         <value name="CODE32" code="9" label="Camouflage."/>
+      </enum>
+
+      <enum name="LsaOperationDomain">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="WEAPON_ARMEMENT" code="ARM" label="Weapon armament"/>
+         <value name="CAM" code="CAM" label="Air conditionning,installations"/>
+         <value name="CAR" code="CAR" label="Fuel"/>
+         <value name="ELECTRICITY" code="ELE" label="Electricity"/>
+         <value name="GENERALITY" code="GEN" label="Generality"/>
+         <value name="HAT" code="HAT" label="Hydraulic Landing gears"/>
+         <value name="MOS" code="MOS" label="Engine"/>
+         <value name="OSI" code="OSI" label="Oxygen Seat"/>
+         <value name="SCV" code="SCV" label="Fly by wire"/>
+         <value name="SNA" code="SNA" label="Navigation Weapon System"/>
+         <value name="SN2" code="SN2" label="Navigation Weapon System NTI2"/>
+         <value name="STR" code="STR" label="Structure"/>
+      </enum>
+
+      <enum name="LsaOperationStatus">
+         <description lang="en">Status code which indicates Operation advance.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="MUST_BE_CONFIRMED" code="A" label="Must be confirmed for delivery"/>
+         <value name="TO_BE_DONE" code="B" label="To be done"/>
+         <value name="SPECIFIED" code="C" label="Specified"/>
+         <value name="MUST_BE_COMPLETED" code="D" label="Must be completed"/>
+         <value name="STUDY_DONE" code="E" label="Study done (must be revised)"/>
+         <value name="STUDY_COMPLETED" code="F" label="Study completed"/>
+      </enum>
+
+      <enum name="LsaResourceType">
+         <description lang="fr">Enumération associée à l'interface LsaResource</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="NUCLASS" code="NUCLASS" label="Nuclass"/>
+         <value name="PERSONNEL" code="PERS" label="Personnel"/>
+         <value name="ENERGY" code="NRGY" label="Energy"/>
+         <value name="LSAC" code="LSAC" label="Lsac"/>
+         <value name="PRODUCT" code="PROD" label="Product"/>
+         <value name="TECHNICAL_PRODUCT_SET" code="PTEC" label="TechnicalProductSet"/>
+         <value name="PHYSICAL_PRODUCT_SET" code="PPHY" label="PhysicalProductSet"/>
+         <value name="GSE_SET" code="GSET" label="GroundSupportEquipmentSet"/>
+      </enum>
+
+      <enum name="LsaTrainingRecommendationCode">
+         <description lang="fr">Indicates if specific training  is required to accomplish task/operation.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="BOTH" code="B" label="Tutor and course"/>
+         <value name="COURSE" code="C" label="Course"/>
+         <value name="TUTOR" code="J" label="Tutor sponsorship"/>
+         <value name="NO" code="N" label="No specific instruction needed"/>
+      </enum>
+
+      <enum name="LsaUsageMode">
+         <description lang="fr">Enumération des finalités possibles de l'exécution d'une Sous-Tâche.
+Quand la logistique utilisée ou consommée lors de l'exécution d'une Sous-Tâche dépend de la finalité d'exécution de la Sous-Tâche, il doit être possible de saisir cette différence.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="STANDARD" code="S" label="Standard">
+            <description lang="fr">La Sous-Tâche a une seule finalité ou deux finalités.
+Cette énumération désigne la logistique commune (une finalité) ou celle correspondant à un échange (deux finalités).</description>
+         </value>
+         <value name="ACCESS" code="A" label="Access">
+            <description lang="fr">La Sous-Tâche a deux finalités (échange et accès), et cette valeur sert à désigner la logistique utilisée spécialement en Accès.</description>
+         </value>
+      </enum>
+
+      <enum name="LsacType">
+         <description lang="fr">Enumération des différents types de Lsac.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="SYSTEM" code="S" label="System">
+            <description lang="fr">Le Lsac est un Système (Hydraulique, électrique, ...)</description>
+         </value>
+         <value name="ZONE" code="Z" label="Zone">
+            <description lang="fr">Le Lsac est une Zone.</description>
+         </value>
+         <value name="ACCESS" code="A" label="Access">
+            <description lang="fr">Le Lsac est un Accès.</description>
+         </value>
+         <value name="EQUIPMENT" code="E" label="Equipment">
+            <description lang="fr">Le Lsac est un équipment.</description>
+         </value>
+      </enum>
+
+      <enum name="MaintenanceSupportOrganisation">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="NTI1" code="1" label="Organizational -> NTI1"/>
+         <value name="NTI2" code="2" label="Intermediate -> NTI2"/>
+         <value name="NTI3" code="3" label="Depot -> NTI3"/>
+      </enum>
+
+      <enum name="ManufacturerValidity">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="UNKNOWN" code="U" label="Unknown"/>
+         <value name="VALID" code="V" label="Valid"/>
+         <value name="NOT_VALID" code="N" label="Not Valid"/>
+      </enum>
+
+      <enum name="MgtDelayScale">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="DAY" code="D" label="Day"/>
+         <value name="WEEK" code="W" label="Week"/>
+         <value name="MONTH" code="M" label="Month"/>
+         <value name="YEAR" code="Y" label="Year"/>
+      </enum>
+
+      <enum name="MgtFlaskDependencyType">
+         <description lang="fr">Indique l'ordre d'execution pour une dépendance entre fournâche</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="START_WHEN_FINISH" code="SF" label="Start when finish"/>
+         <value name="START_WHEN_START" code="SS" label="Start when start"/>
+         <value name="FINISH_WHEN_START" code="FS" label="Finish when start"/>
+         <value name="FINISH_WHEN_FINISH" code="FF" label="Finish when finish"/>
+      </enum>
+
+      <enum name="MgtFlaskType">
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <value name="TASK" code="MTK-" label="Task"/>
+         <value name="FLOW" code="FLW-" label="Flow"/>
+      </enum>
+
+      <enum name="MgtFollowUpStatus">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="NOTHING_TO_REPORT" code="NR" label="Nothing to report"/>
+         <value name="NOT_STARTED_AFTER_START" code="AS" label="Not started after start date"/>
+         <value name="WAITING_DEPENDENCY_AFTER_START" code="DE" label="Waiting dependency after start date"/>
+         <value name="NOT_FINISHED_AFTER_TARGET" code="AT" label="Not finished after target date"/>
+         <value name="NOT_FINISHED_AFTER_DEADLINE" code="AD" label="Not finished after deadline date"/>
+      </enum>
+
+      <enum name="MgtMilestoneNature">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="START" code="S" label="Start"/>
+         <value name="TARGET" code="T" label="Target"/>
+         <value name="END" code="E" label="End"/>
+         <value name="DEADLINE" code="D" label="Deadline"/>
+         <value name="GLOBAL" code="G" label="Global"/>
+      </enum>
+
+      <enum name="MgtProgressStatus">
+         <description lang="fr">Indique si la fournâche est démarrée, en cours, finie...</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="NOT_STARTED" code="N" label="Not started"/>
+         <value name="IN_DEPENDENCIES" code="I" label="In dependencies"/>
+         <value name="RUNNING" code="R" label="Running"/>
+         <value name="FINISHED" code="F" label="Finished"/>
+      </enum>
+
+      <enum name="NecessaryType">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="PROHIBITED" code="P" label="Prohibited"/>
+         <value name="NECESSARY" code="N" label="Necessary"/>
+         <value name="INDIFFERENT" code="I" label="Indifferent"/>
+      </enum>
+
+      <enum name="PackageMode">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="USE" code="U" label="Use"/>
+         <value name="SHIPPING" code="S" label="Shipping"/>
+      </enum>
+
+      <enum name="PartCategoryCode">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="CELLULE_STRUCTURE" code="C" label="Cellule Structure"/>
+         <value name="EQUIPMENT" code="E" label="Equipment"/>
+         <value name="INGREDIENT" code="I" label="Ingredient"/>
+         <value name="QUINCAILLERIE_ELECTRIQUE" code="L" label="Quincaillerie electrique "/>
+         <value name="TOOL" code="M" label="Tool"/>
+         <value name="STANDARD_QUINCAILLERIE" code="Q" label="Standard quincaillerie"/>
+         <value name="COMPOSANT_ELECTRIQUE" code="P" label="Composant electrique"/>
+      </enum>
+
+      <enum name="PatchStatus">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="NOT_PATCHED" code="N" label="Not patched"/>
+         <value name="VALID_PATCH" code="V" label="Patched"/>
+         <value name="USELESS_PATCH" code="U" label="Useless"/>
+      </enum>
+
+      <enum name="PatchType">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="NONE" code="N" label="None"/>
+         <value name="PRODUCT" code="P" label="Product"/>
+         <value name="RELATION" code="R" label="Relation"/>
+         <value name="BOTH" code="B" label="Both"/>
+      </enum>
+
+      <enum name="PmiInspectionMode">
+         <description lang="fr">Indique si l'inspection est éventuelle (POSSIBLE) ou systématique (SYSTEMATIC).</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="SYSTEMATIC" code="S" label="Sys"/>
+         <value name="POSSIBLE" code="P" label="Pos"/>
+      </enum>
+
+      <enum name="ProductInstancePatchKind">
+         <!-- Can not be generated because of DisplayableWithIcon -->
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="UPDATE" code="U" label="Update"/>
+         <value name="CREATE" code="C" label="Create"/>
+         <value name="REMOVE" code="R" label="Remove"/>
+      </enum>
+
+      <enum name="ProductSetType">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="PART_SET" code="PS" label="Part set"/>
+         <value name="MISC_SET" code="MS" label="Misc set"/>
+         <value name="TOOL_SET" code="TS" label="Tool set"/>
+      </enum>
+
+      <enum name="ProductType">
+         <!-- Can not be generated because of DisplayableWithIcon -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <value name="PART" code="PART" label="Part"/>
+         <value name="MISC" code="MISC" label="Misc"/>
+         <value name="TOOL" code="TOOL" label="Tool"/>
+      </enum>
+
+      <enum name="ProductValidity">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="VALID" code="V" label="Valid">
+            <description lang="fr">Le PN fait parti d'un CSN rechange.</description>
+         </value>
+         <value name="FICTITIOUS" code="F" label="Fictitious">
+            <description lang="fr">Le PN est fictif => Déterminé par règle de nommage dans isn.</description>
+         </value>
+         <value name="VALID_INTER" code="I" label="Intermediate">
+            <description lang="fr">Le PN Ensemble intermédiaire non rechange.</description>
+         </value>
+      </enum>
+
+      <enum name="PropertySource">
+         <!-- Can not be generated because of DisplayableWithIcon, ... -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <value name="FT" code="T" label="Fichier Technique"/>
+         <value name="IPC" code="I" label="Ipc"/>
+         <value name="PATCH" code="P" label="Patch"/>
+         <value name="DOC" code="D" label="Doc"/>
+         <value name="SEW" code="S" label="New Appro"/>
+         <value name="REFS" code="R" label="Refs"/>
+         <value name="IBACS" code="B" label="Ibacs"/>
+         <value name="UNDEFINED" code="U" label="Undefined"/>
+      </enum>
+
+      <enum name="ReasonForSelection">
+         <!-- Can not be generated because of DisplayableWithIcon, ... -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <value name="ITEM_NOT_SPARE" code="0" label="Item not selected as spare"/>
+         <value name="WEAR" code="1" label="Wear"/>
+         <value name="MAINTENANCE_DAMAGE" code="2" label="Maintenance damage"/>
+         <value name="LOSS" code="3" label="Loss"/>
+         <value name="VIBRATION" code="4" label="Vibration"/>
+         <value name="CORROSION" code="5" label="Corrosion"/>
+         <value name="DETERIORATION" code="6" label="Deterioration"/>
+         <value name="EXTREME_TEMPERATURE" code="7" label="Extreme temperature"/>
+         <value name="OTHER" code="8" label="GSE Tool IPD"/>
+         <value name="ACCIDENTAL_DAMAGE" code="9" label="Accidental damage"/>
+      </enum>
+
+      <enum name="RefProductDocNature">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="DEDUCED" code="D" label="Deduced"/>
+         <value name="NATIVE" code="N" label="Native"/>
+      </enum>
+
+      <enum name="RefProductType">
+         <description lang="fr">Différentes sources possibles d'un article.</description>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <value name="FT" code="T" label="Fichier Technique"/>
+         <value name="IPC" code="I" label="Ipc"/>
+         <value name="PATCH" code="P" label="Patch"/>
+         <value name="DOC" code="D" label="Doc"/>
+         <value name="SEW" code="S" label="New Appro"/>
+      </enum>
+
+      <enum name="ReparConsuCode">
+         <description lang="en">Item category code (according to MIL STD-1388-2B specification) for a spare part mounted on a LSAC => indicates if the part is reparable/consumable.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="CONSUMABLE" code="Y" label="Consumable"/>
+         <value name="REPARABLE" code="X" label="Reparable"/>
+      </enum>
+
+      <enum name="ReplaceableUnitCode">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="URL" code="L" label="Url"/>
+         <value name="URA" code="A" label="Ura"/>
+      </enum>
+
+      <enum name="RmpMaintenanceSupportOrganisation">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="NTI0" code="0" label="Servicing -> NT0"/>
+         <value name="NTI1" code="1" label="Organizational -> NTI1"/>
+         <value name="NTI2" code="2" label="Intermediate -> NTI2"/>
+         <value name="NTI3" code="3" label="Depot -> NTI3"/>
+      </enum>
+
+      <enum name="RmpStudyOrigin">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="SECU" code="S" label="Security"/>
+      </enum>
+
+      <enum name="RmpTaskFollowing">
+         <!-- Can not be generated because of FR/EN -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <value name="AIRCRAFT" code="A" label="Aircraft"/>
+         <value name="COMPONENT" code="C" label="Component"/>
+         <value name="ELEMENT" code="E" label="Element"/>
+         <value name="GSE" code="G" label="Ground Support Equipment"/>
+      </enum>
+
+      <enum name="RtxType">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="IPPN" code="IPPN" label="IPPN"/>
+         <value name="ISN_DECOMPOSITION" code="DECOMPO" label="DECOMPO"/>
+         <value name="ISN_COMPOSITION" code="COMPO" label="COMPO"/>
+         <value name="NONE" code="NONE" label="NONE"/>
+      </enum>
+
+      <enum name="RupKind">
+         <description lang="fr">Type du Point d'Emploi Relatif (ie. RelativeUsePoint) : Composition, Matière Première, Conteneur, ...</description>
+         <description lang="en">Type of Relative use Point (ie. RelativeUsePoint) : Composition, Matière Première, Conteneur, ...</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="COMPONENT" code="CT" label="COMPONENT"/>
+         <value name="CONTAINING" code="CG" label="Containing"/>
+         <value name="RAW_MATERIAL" code="RM" label="Raw Material"/>
+         <value name="CONTAINER" code="CR" label="Container"/>
+         <value name="UNKNOWN" code="" label="UNKNOWN"/>
+      </enum>
+
+      <enum name="SbServiceBulletinStatus">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="VALID" label="Valid" code="V"/>
+         <value name="INVALID" label="Invalid" code="I"/>
+      </enum>
+
+      <enum name="SbServiceBulletinType">
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <value name="OM" label=" Operational Message" code="OM">
+            <description lang="fr">MO Message Opérationnel</description>
+         </value>
+         <value name="TEB" label="Technical Evolution Bulletin" code="TEB">
+            <description lang="fr">BET Bulletin d'evolution technique</description>
+         </value>
+         <value name="DSB" label="Dassault Service Bulletin" code="DSB">
+            <description lang="fr">SB Dassault Bulletin service</description>
+         </value>
+         <value name="GSESB" label="Ground Support Equipment Service Bulletin" code="GSESB">
+            <description lang="fr">BSMS Bulletin service moyen sol</description>
+         </value>
+         <value name="TI" label="Technical Instruction" code="TI">
+            <description lang="fr">IT Instruction technique</description>
+         </value>
+      </enum>
+
+      <enum name="SfFilterAircraftType">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="MBC" code="M B C" label="Start state"/>
+         <value name="END" code="B" label="End state"/>
+      </enum>
+
+      <enum name="SfFilterOriginFollowingType">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="START" code="START" label="Start state"/>
+         <value name="END" code="END" label="End state"/>
+      </enum>
+
+      <enum name="SfFilterPhasis">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="AVV" code="AVV" label="Before flight"/>
+         <value name="VOL" code="VOL" label="In flight"/>
+         <value name="APV" code="APV" label="After flight"/>
+      </enum>
+
+      <enum name="SfFilterType">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="ITP" code="ITP" label="Untimely"/>
+         <value name="NRP" code="NRP" label="Not representative of failure"/>
+         <value name="FGT" code="FGT" label="Transient"/>
+      </enum>
+
+      <enum name="SfSubFilterFrontType">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="F" code="F" label="Front"/>
+         <value name="R" code="R" label="Rear"/>
+      </enum>
+
+      <enum name="SheetCustomerInterestCode">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="CUSTOMER" code="U" label="Sheet written by customer for its own need"/>
+         <value name="INDUSTRIAL" code="M" label="Sheet written by industrial for its own need"/>
+         <value name="BOTH" code="B" label="Sheet concerning both customer and industrial"/>
+      </enum>
+
+      <enum name="SheetOriginCode">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="CUSTOMER" code="U" label="Customer"/>
+         <value name="INDUSTRIAL" code="M" label="Industrial"/>
+      </enum>
+
+      <enum name="SheetSubjectCode">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="IDENTIFICATION" code="IDENT" label="Operation identification (All data)"/>
+         <value name="MANAGEMENT" code="GESIT" label="Operation management"/>
+         <value name="DEMONSTRATION_VALIDATION" code="DEMVA" label="Operation Demonstration validation"/>
+         <value name="CONFIGURATION" code="CONFI" label="Operation Configuration"/>
+         <value name="QUESTION_OBSERVATION" code="QUOBS" label="Operation Questions observation"/>
+         <value name="DOCUMENT_REFERENCE" code="DOCRE" label="Sequence Reference documents"/>
+         <value name="PROCEDURE" code="PROCE" label="Subtak procedure (all data)"/>
+         <value name="RISKS" code="RISKS" label="Criticity or Potential Harzardous danger"/>
+         <value name="DURATION" code="DUREE" label="Subtask duration or man workload"/>
+         <value name="EXECUTION_INTERVAL" code="INTEX" label="Operation execution interval/frequency"/>
+         <value name="EXECUTION" code="EXECU" label="Execution"/>
+         <value name="EXTERNAL_ENERGY" code="ENNER" label="External energy"/>
+         <value name="PERSONAL" code="PERSO" label="Personal"/>
+         <value name="CONTROL" code="CONTR" label="Control"/>
+         <value name="TOOLS" code="OUTIL" label="Tools"/>
+         <value name="GSE" code="MSHOO" label="GSE"/>
+         <value name="SPARES" code="SPARE" label="Spares"/>
+         <value name="MISCELANEOUS" code="INGRE" label="Miscelaneous"/>
+         <value name="INSTRUCTION" code="INSTR" label="Instruction."/>
+         <value name="DOCUMENTATION" code="DOCUM" label="Documentation"/>
+         <value name="LOCATION_WORKSHOP" code="INFRA" label="Location Workshop"/>
+      </enum>
+
+      <enum name="SheetTypeCode">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="NEED" code="B" label="Need expression"/>
+         <value name="JUSTIFY" code="J" label="Justify sheet"/>
+         <value name="REMARK" code="R" label="Remark"/>
+      </enum>
+
+      <enum name="ShelfLifeCode">
+         <!-- Can not be generated because of DisplayableWithIcon, ... -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <value name="TYPE_0" code="0" label="Non deteriorative"/>
+         <value name="TYPE_A" code="A" label="1 month"/>
+         <value name="TYPE_B" code="B" label="2 months"/>
+         <value name="TYPE_C" code="C" label="3 months (C)"/>
+         <value name="TYPE_1" code="1" label="3 months (1)"/>
+         <value name="TYPE_D" code="D" label="4 months"/>
+         <value name="TYPE_E" code="E" label="5 months"/>
+         <value name="TYPE_F" code="F" label="6 months (F)"/>
+         <value name="TYPE_G" code="G" label="9 months (G)"/>
+         <value name="TYPE_H" code="H" label="12 months (H)"/>
+         <value name="TYPE_2" code="2" label="6 months (2)"/>
+         <value name="TYPE_3" code="3" label="9 months (3)"/>
+         <value name="TYPE_4" code="4" label="12 months (4)"/>
+         <value name="TYPE_J" code="J" label="15 months"/>
+         <value name="TYPE_K" code="K" label="18 months (K)"/>
+         <value name="TYPE_5" code="5" label="18 months (5)"/>
+         <value name="TYPE_L" code="L" label="21 months"/>
+         <value name="TYPE_M" code="M" label="24 months (M)"/>
+         <value name="TYPE_6" code="6" label="24 months (6)"/>
+         <value name="TYPE_N" code="N" label="27 months"/>
+         <value name="TYPE_P" code="P" label="30 months"/>
+         <value name="TYPE_Q" code="Q" label="36 months (Q)"/>
+         <value name="TYPE_R" code="R" label="48 months (R)"/>
+         <value name="TYPE_S" code="S" label="60 months (S)"/>
+         <value name="TYPE_7" code="7" label="36 months (7)"/>
+         <value name="TYPE_8" code="8" label="48 months (8)"/>
+         <value name="TYPE_9" code="9" label="60 months (9)"/>
+         <value name="TYPE_X" code="X" label=">60 months"/>
+      </enum>
+
+      <enum name="SpareCode">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="SPARE" code="S" label="Spare part"/>
+         <value name="EVOLVED_SPARE" code="E" label="Evolved spare"/>
+         <value name="NOT_SPARE" code="N" label="Not a spare part"/>
+      </enum>
+
+      <enum name="SpareStatus">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="LAST_CONFIGURATION" code="L" label="Last config"/>
+         <value name="OLD_CONFIGURATION" code="O" label="Old config"/>
+         <value name="NOT_SPARE" code="N" label="Not spare"/>
+      </enum>
+
+      <enum name="SubtaskDocModuleLinkForce">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="UNDEFINED" code="U" label="Undefined"/>
+         <value name="WEAK" code="W" label="Weak"/>
+         <value name="STRONG" code="S" label="Strong"/>
+      </enum>
+
+      <!-- TRBL DIAG ENUM -->
+
+      <enum name="SymptomType">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="BIT" code="BIT" label="Maintenance message"/>
+         <value name="BIT_FALBALA" code="BF" label="Bit"/>
+         <value name="CAS" code="CAS" label="Crew Alert System"/>
+         <value name="SENSITIVE" code="SNS" label="Sensitive"/>
+         <value name="FAILURE_CODE" code="FC" label="Failure Code"/>
+         <value name="FLIGHT_CONTROL_SYSTEM" code="FCS" label="Flight Control System"/>
+         <value name="FAULT_ROOT_CAUSE" code="FRC" label="Fault and Root Cause"/>
+         <value name="SCV_ELAB" code="SCVELAB" label="SCV Elaborate"/>
+         <value name="VIRTUAL_SYMPTOM" code="VTS" label="Virtual Symptom"/>
+      </enum>
+
+      <enum name="ToolCategoryCode">
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <value name="GSE_COMMON_HANDLING_EQUIPMENT" code="R" label="Common standard GSE common handling equipment"/>
+         <value name="GSE_COMMON_TEST_EQUIPMENT" code="P" label="Common standard GSE common test equipment"/>
+         <value name="GSE_COMMON_ATE" code="3" label="Common standard GSE common ATE"/>
+         <value name="GSE_COMMON_OTHER" code="G" label="Common standard GSE common other"/>
+         <value name="SPECIALISED_GSE_ATE" code="2" label="Specialised GSE ATE"/>
+         <value name="SPECIALISED_GSE_HANDLING_EQUIPMENT" code="6" label="Specialised GSE handling equipment"/>
+         <value name="SPECIALISED_GSE_TEST_EQUIPMENT" code="5" label="Specialised GSE test equipment"/>
+         <value name="SPECIALISED_GSE_OTHER" code="H" label="Other Specialised GSE "/>
+         <value name="PECULIAR_HANDLING_EQUIPMENT" code="D" label="Peculiar handling equipment"/>
+         <value name="PECULIAR_TEST_EQUIPMENT" code="M" label="Peculiar test equipment"/>
+         <value name="PECULIAR_ATE" code="1" label="Peculiar ATE"/>
+         <value name="PECULIAR_OTHER" code="7" label="Other peculiar"/>
+         <value name="TECHNICAL_MANUAL" code="F" label="Technical Manual"/>
+         <value name="AERO_SPECIALISED_TOOL" code="4" label="Aeronautical Specialised Tool"/>
+         <value name="RAFALE_SPECIFIC_TOOL" code="8" label="Rafale specific Tool"/>
+         <value name="STANDARD_TOOL" code="N" label="Standard Tool"/>
+      </enum>
+
+      <enum name="TrblDiagXmlExportFiles">
+         <description lang="fr">Liste des documents Xml exportés</description>
+         <generate code="FULL" converters="true" informer="EDITABLE"/>
+         <value name="ALARM" code="ALARME" label="Dictionnaire des Alarmes"/>
+         <value name="EQPT" code="EQUIPEMENT" label="Dictionnaire des URL (LSAC/RFD)"/>
+         <value name="OBS" code="OBSERVABLE" label="Dictionnaire des Observables"/>
+         <value name="TRI" code="TRI" label="Dictionnaire des Tests de réduction d’incertitude"/>
+         <value name="TV" code="TV" label="Dictionnaire des Tests de validation"/>
+         <value name="DIAG" code="DIAGNOSTIC" label="Dictionnaire des cas de panne"/>
+         <value name="CAT" code="CATALOGUE" label="Liste des fichiers livrés"/>
+      </enum>
+
+      <enum name="TrblDocType">
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <value name="FIP_ELEMENT" label="Fip element" code="FIPE"/>
+         <value name="VALIDATION_TEST" label="Validation Test" code="VT"/>
+      </enum>
+
+      <enum name="TrblFailureRateUnit">
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <value name="UNKNOWN" code="U" label="Unkown">
+            <description lang="fr">Codé 0 dans Falbala</description>
+         </value>
+         <value name="EXP00" code="00" label="1.0/FH">
+            <description lang="fr">Codé 6 dans Falbala</description>
+         </value>
+         <value name="EXP03" code="03" label="1.0e-3/FH">
+            <description lang="fr">Codé 5 dans Falbala</description>
+         </value>
+         <value name="EXP06" code="06" label="1.0e-6/FH">
+            <description lang="fr">Codé 4 dans Falbala</description>
+         </value>
+         <value name="EXP09" code="09" label="1.0e-9/FH">
+            <description lang="fr">Codé 3 dans Falbala</description>
+         </value>
+         <value name="EXP12" code="12" label="1.0e-12/FH">
+            <description lang="fr">Codé 2 dans Falbala</description>
+         </value>
+         <value name="EXP15" code="15" label="1.0e-15/FH">
+            <description lang="fr">Codé 1 dans Falbala</description>
+         </value>
+      </enum>
+
+      <enum name="TrblFailureSetStatus">
+         <description lang="fr"></description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="COMPLETE" code="0" label="Complete"/>
+         <value name="FIP_MISSING" code="1" label="Fip Missing"/>
+         <value name="VT_MISSING" code="2" label="Vt Missing"/>
+         <value name="VT_AND_FIP_MISSING" code="3" label="Fip and Vt missing"/>
+      </enum>
+
+      <enum name="TrblFailureSetType">
+         <description lang="fr">Enumération des types de calculs possibles de FailureSet (les différents algorithmes).</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="FS1" code="FS1-" label="Algorithm 1"/>
+         <value name="FS2" code="FS2-" label="Algorithm 2"/>
+         <value name="USR" code="USR-" label="User"/>
+      </enum>
+
+      <enum name="TrblFailureSetValidity">
+         <description lang="fr">Validité des FailureSet.</description>
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="VALIDATED" code="0" label="Valid"/>
+         <value name="INITIALIZED" code="1" label="Not Valid"/>
+      </enum>
+
+      <enum name="TrblFipDuration">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="D5" code="0" label="5 minutes"></value>
+         <value name="D30" code="1" label="20 minutes"></value>
+         <value name="D60" code="2" label="1 heure"></value>
+         <value name="D120" code="3" label="2 heures"></value>
+         <value name="D120PLUS" code="4" label="> 2 heures"></value>
+      </enum>
+
+      <enum name="TrblLinkType">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="LOCALISEDVIRTUALSYMPTOM_LRUFMNODE" code="1" label="LocalisedVirtualSymptom LruFmNode"/>
+         <value name="LRUFMNODE_LOCALISEDVIRTUALSYMPTOM" code="2" label="LruFmNode LocalisedVirtualSymptom"/>
+         <value name="LRUFMNODE_LRUFMNODE" code="3" label="LruFmNode LruFmNode"/>
+         <value name="LRUFMNODE_TRBLSYMPTOM" code="4" label="LruFmNode TrblSymptom"/>
+         <value name="TRBLSYMPTOM_TRBLSYMPTOM" code="5" label="TrblSymptom TrblSymptom"/>
+         <value name="LOCALISEDVIRTUALSYMPTOM_LOCALISEDVIRTUALSYMPTOM" code="6" label="LocalisedVirtualSymptom LocalisedVirtualSymptom"/>
+         <value name="TRBLSYMPTOM_LRUFMNODE" code="7" label="TrblSymptom LruFmNode"/>
+      </enum>
+
+      <enum name="TrblLruFmNodeStatus">
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <value name="DRAFT" label="Draft" code="0"/>
+         <value name="VALIDATED" label="Validated" code="1"/>
+      </enum>
+
+      <enum name="TrblModificationApplicability">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="NA" code="0" label="N/A"></value>
+         <value name="YES" code="1" label="Yes"></value>
+         <value name="NO" code="2" label="No"></value>
+      </enum>
+
+      <enum name="TrblRelevance">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="IRRELEVANT" code="NO" label="Irrelevant"/>
+         <value name="RELEVANT" code="YES" label="Relevant"/>
+         <value name="UNKNOWN" code="N/A" label="Unknown"/>
+      </enum>
+
+      <enum name="TrblTestDuration">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="D5" code="0" label="5 minutes"/>
+         <value name="D30" code="1" label="30 minutes"/>
+         <value name="D60" code="2" label="1 heure"/>
+         <value name="D120" code="3" label="2 heures"/>
+         <value name="D120PLUS" code="4" label="> 2 heures"/>
+      </enum>
+
+      <enum name="TrblTestType">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="FCT" code="FCT" label="Fonctionnement ?"/>
+         <value name="INS" code="INS" label="INS ???"/>
+         <value name="LCM" code="LCM" label="Test déclenché"/>
+         <value name="MCS" code="MCS" label="MCS ???"/>
+         <value name="MTR" code="MTR" label="MTR ???"/>
+         <value name="SUB" code="SUB" label="Substitution"/>
+         <value name="TEST" code="TST" label="Test"/>
+         <value name="NA" code="NA" label="Not Applicable"/>
+         <value name="GND_MNT" code="GND_MNT" label="Ground Maintenance"/>
+      </enum>
+
+      <enum name="TrblVisibility">
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <value name="AV" label="Always Visible" code="1"/>
+         <value name="NAV" label="Not Always Visible" code="2"/>
+      </enum>
+
+      <enum name="TypeNature">
+         <!-- Can not be generated because of DisplayableWithIcon, ... + description -->
+         <generate code="NONE" converters="true" informer="EDITABLE"/>
+         <value name="AIRCRAFT" code="Z" label="A/C , Aircraft"/>
+         <value name="AIRFRAME" code="A" label="Airfr. , Airframe"/>
+         <value name="EQUIPMENT" code="E" label="Eqt. , Equipment"/>
+         <value name="OPTIONNAL" code="O" label="Opt. , Optionnal"/>
+         <value name="COMPONENT" code="K" label="Comp., Component"/>
+         <value name="ATE" code="B" label="ATE, Automatic Test bench Equipment"/>
+         <value name="IPD" code="I" label="POL, Products, Oils and Lubricants (IPD)"/>
+         <value name="MS" code="M" label="GSE, Ground support / servicing equipment"/>
+         <value name="HARDWARE_MECA" code="H" label="Mech.H, Hardware Mecanical"/>
+         <value name="HARDWARE_ELEC" code="L" label="Elec.H, Hardware Electrical"/>
+         <value name="RAW_MATERIAL" code="R" label="Raw, Raw Material"/>
+         <value name="SIMULATOR" code="S" label="Simu, Simulator"/>
+         <value name="TRAINING" code="T" label="Training"/>
+         <value name="PILOT_EQUIPMENT" code="P" label="Pilot, Pilot Equipment"/>
+         <value name="CONTAINER" code="C" label="Cont., Container"/>
+      </enum>
+
+      <enum name="UnitLimitLifeInUtilization">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="J" code="J" label="Jour"/>
+         <value name="M" code="M" label="Mois"/>
+         <value name="H" code="H" label="Heure de vol"/>
+         <value name="T" code="T" label="Heure de fonctionnement"/>
+         <value name="A" code="A" label="Nombre d’atterrissages"/>
+         <value name="B" code="B" label="Nombre de cycles"/>
+         <value name="C" code="C" label="Nombre de coups tirés"/>
+         <value name="P" code="P" label="Heure de postcombustion"/>
+         <value name="K" code="K" label="Nombre de kilomètres"/>
+      </enum>
+
+      <enum name="VersionIdType">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="TYPE_1" code="1" label="Type 1 (Valid)"/>
+         <value name="TYPE_2" code="2" label="Type 2"/>
+         <value name="TYPE_3" code="3" label="Type 3"/>
+      </enum>
+
+      <enum name="WorkshopElementType">
+         <generate code="FULL" converters="true" informer="STANDARD"/>
+         <value name="LSA_TASK" code="TSK" label="Task"/>
+         <value name="LSA_SUBTASK" code="ST" label="SubTask"/>
+         <value name="LSA_DESCRIPTION" code="DESC" label="Description"/>
+         <value name="RMP_OPERATION" code="OP" label="Operation"/>
+      </enum>
+
+   </package>
+</code>
